@@ -7,7 +7,7 @@ block content
   .home(data-background="#f4f4f4" data-color="#000000")
     .embed__responsive__item
       video.embed__responsive__video(autoplay muted loop)
-        source(src="pexels-kelly-lacy-6595364.mp4" type="video/mp4")
+        source(src="/video" type="video/mp4")
     .home__wrapper
       each section in home.data.body
         if section.slice_type == 'content'
@@ -25,7 +25,7 @@ block content
                   if section.primary.text
                     if section.primary.link.slug
                       a.home__content__button(href=section.primary.link.slug)=section.primary.text
-                    else 
+                    else
                       a.home__content__button(href="javascript:void(0)")=section.primary.text
             figure.home__content__media
               img.home__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
