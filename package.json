@@ -2,12 +2,16 @@
   "name": "gala_digdaya",
   "version": "1.0.0",
   "description": "Gala Digdaya",
+  "main": "app.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "backend:build": "node app.js",
     "backend:development": "nodemon app.js",
     "frontend:build": "webpack --progress --config webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config webpack.config.development.js",
-    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
+    "start": "concurrently --kill-others \"npm run backend:build\" \"npm run frontend:build\""
   },
   "author": "Arief Setiyo Budi",
   "devDependencies": {
