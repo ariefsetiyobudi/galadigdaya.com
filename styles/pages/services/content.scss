@@ -31,7 +31,6 @@
     .services__content__inner__box{
       flex-direction: row;
       max-width: calc(100vw - 20rem);
-      z-index: 2;
     }
     .services__content__description{
       width: 90rem;
@@ -152,7 +151,7 @@
 .services__content--right{
   display: flex;
   flex-direction: row;
-  
+
   &:nth-child(1){
     justify-content: flex-start;
     .services__content__wrapper{
@@ -190,7 +189,7 @@
   padding: 0 0 5rem;
   max-width: 55vw;
   border-bottom: 1px solid $color-black;
-  
+
 }
 
 .services__content__box{

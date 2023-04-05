@@ -22,4 +22,5 @@
 }
 .services__lists__title{
   @extend %title-h2-m;
+  text-transform: uppercase;
 }
