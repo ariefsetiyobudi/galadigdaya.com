@@ -44,10 +44,6 @@
 
 .contact__content__description{
   line-height: 1.5;
-
-  @include media('<phone') {
-    margin-bottom: calc(((65 / 100) * (100vw - 10rem)) + 10rem);
-  }
 }
 
 .contact__content__office{
@@ -64,6 +60,10 @@
 .contact__map{
   width: 60vw;
   height: 70vh;
+  position: absolute;
+  right: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
 
   iframe{
     width: 100%;
@@ -72,8 +72,10 @@
   }
 
   @include media('<phone') {
-    position: absolute;
-    top: calc((100vh - (((65 / 100) * (100vw - 10rem)) + 5rem)) / 2);
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: unset;
     width: calc(100vw - 10rem);
     height: calc((65 / 100) * (100vw - 10rem));
   }
