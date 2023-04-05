@@ -1,0 +1,15 @@
+.home {
+  @extend %page;
+}
+.home__wrapper {
+  @include media('<phone') {
+    padding: 10rem 0 0;
+  }
+}
+.embed__responsive__item{
+  @extend %cover;
+  overflow: hidden;
+}
+.embed__responsive__video{
+  width: 100%;
+}

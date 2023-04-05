@@ -1,0 +1,33 @@
+.services__gallery{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services__gallery__title{
+  color: transparent;
+  width: 100vw;
+  height: 40vw;
+  overflow: hidden;
+  position: absolute;
+  font-size: 38vw;
+  margin: -10vw 0 0;
+  -webkit-text-stroke: 1px #000000;
+  opacity: .2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.services__gallery__wrapper{
+  display: flex;
+  width: 375rem;
+  gap: 5rem;
+  z-index: 1;
+}
+.services__gallery__media{
+  width: 30rem;
+  height: 40rem;
+}
+.services__gallery__media__image{
+  width: 100%;
+  height: 100%;
+}
