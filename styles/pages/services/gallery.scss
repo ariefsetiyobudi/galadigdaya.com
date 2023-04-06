@@ -3,26 +3,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 
   @include media('<phone'){
     background-color: $color-cool-black;
   }
 }
 .services__gallery__title{
-  color: transparent;
-  width: 100vw;
-  height: 40vw;
-  overflow: hidden;
   position: absolute;
-  font-size: 38vw;
-  margin: -10vw 0 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: transparent;
+  font-size: 40vw;
   -webkit-text-stroke: 1px $color-black;
   opacity: .2;
   text-transform: uppercase;
   white-space: nowrap;
 
   @include media('<phone'){
-    height:55vh;
     font-size: 100vw;
     -webkit-text-stroke: 1px $color-white;
   }
