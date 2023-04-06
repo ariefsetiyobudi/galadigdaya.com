@@ -78,7 +78,25 @@
     }
     .home__content__media{
       display: none;
+      @include media('<phone') {
+        display: block;
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
     }
+    .home__content__media__image{
+      @include media('<phone') {
+        height: 100%;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
     &:after {
       content: "";
       position: absolute;

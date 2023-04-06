@@ -10,7 +10,7 @@
 }
 .embed__responsive__item{
   @extend %cover;
-  overflow: hidden;
+  z-index: 1;
 }
 .embed__responsive__video{
   width: 100%;
