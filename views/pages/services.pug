@@ -10,20 +10,19 @@ block content
         if section.slice_type == 'content'
           section.services__content(class=`${section.primary.type === 'Left' ? 'services__content--left' : section.primary.type === 'Right' ? 'services__content--right' : 'services__content--background'}`)
             .services__content__wrapper
-              h2.services__content__title(data-animation="title")
-                span!=section.primary.title.replace(/\n/g, '</span><span>')
-              .services__content__box
-                if section.primary.label
-                  p.services__content__label(data-animation="label")=section.primary.label
-                .services__content__inner__box
-                  if section.primary.description
-                  .services__content__description(data-animation="paragraph")
-                    span!=section.primary.description.replace(/\n/g, '</span><span>')
-                  if section.primary.text
-                    if section.primary.link.slug
-                      a.services__content__button(href=section.primary.link.slug)=section.primary.text
-                    else 
-                      a.services__content__button(href="javascript:void(0)")=section.primary.text
+              if section.primary.label
+                p.services__content__label(data-animation="label")=section.primary.label
+              if section.primary.title
+                h2.services__content__title(data-animation="title")
+                  span!=section.primary.title.replace(/\n/g, '</span><span>')
+              if section.primary.description
+                .services__content__description(data-animation="paragraph")
+                  span!=section.primary.description.replace(/\n/g, '</span><span>')
+              if section.primary.text
+                if section.primary.link.slug
+                  a.services__content__button(href=section.primary.link.slug)=section.primary.text
+                else
+                  a.services__content__button(href="javascript:void(0)")=section.primary.text
             figure.services__content__media
               img.services__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
         if section.slice_type == 'gallery'
@@ -51,4 +50,4 @@ block content
                     span!=quality.label.replace(/\n/g, '</span><span>')
                   p.services__quality__description(data-animation="paragraph")!=quality.description.replace(/\n/g, '<br>')
       include ../partial/footer
-              
+

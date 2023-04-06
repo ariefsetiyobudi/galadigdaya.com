@@ -1,9 +1,13 @@
 .services__quality{
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  padding: 10rem 5rem 5rem;
+  padding: 15rem 5rem;
   gap: 5rem;
+
+  @include media('<phone') {
+    flex-direction: column;
+    padding: 5rem 5rem 15rem;
+  }
 }
 
 .service__quality__box{
@@ -11,9 +15,8 @@
   display: flex;
   flex-direction: column;
 
-  &:last-of-type{
-    padding-top: 8.8rem;
-    display: flex;
+  @include media('<phone') {
+    width: 100%;
   }
 }
 
@@ -45,6 +48,10 @@
 
   span:not(:last-of-type){
     color: $color-american-orange;
+  }
+
+  @include media('<phone') {
+    min-width: 38%;
   }
 }
 

@@ -1,209 +1,22 @@
 .services__content{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20rem 5rem 5rem;
-  height: 100vh;
-}
-
-.services__content--background{
-  color: $color-white;
-  line-height: 1;
-  height:100vh;
-  &:first-of-type {
-    .services__content__title{
-      @extend %title-h1-l;
-      text-transform: uppercase;
-      display: flex;
-      flex-direction: column;
-      padding: 0 10rem;
-      max-width: calc(100vw);
-      border: none;
-      position: relative;
-      z-index: 2;
-      span{
-        &:last-of-type{
-          padding-left: 20vw;
-        }
-      }
-    }
-    .services__content__box,
-    .services__content__inner__box{
-      flex-direction: row;
-      max-width: calc(100vw - 20rem);
-    }
-    .services__content__description{
-      width: 90rem;
-      margin-left: 60rem;
-    }
-    .services__content__button{
-      border: 1px solid $color-white;
-      margin-top: 2rem;
-
-      &:after{
-        content:"↓"
-      }
-    }
-    .services__content__media{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-    }
-    .services__content__media__image{
-      width: 100%;
-      height: 100%;
-    }
-    &:after {
-      content: "";
-      height: 30rem;
-      width: 100%;
-      z-index: 1;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      background: rgb(0, 49, 92);
-      background: -moz-linear-gradient(
-        180deg,
-        rgba(0, 49, 92, 0) 0%,
-        rgba(0, 49, 92, 1) 94%,
-        rgba(0, 49, 92, 1) 100%
-      );
-      background: -webkit-linear-gradient(
-        180deg,
-        rgba(0, 49, 92, 0) 0%,
-        rgba(0, 49, 92, 1) 94%,
-        rgba(0, 49, 92, 1) 100%
-      );
-      background: linear-gradient(
-        180deg,
-        rgba(0, 49, 92, 0) 0%,
-        rgba(0, 49, 92, 1) 94%,
-        rgba(0, 49, 92, 1) 100%
-      );
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00315C",endColorstr="#00315C",GradientType=1);
-    }
-  }
-  &:nth-child(3){
-    .services__content__wrapper{
-      max-width: 62rem;
-    }
-    .services__content__title{
-      padding: 0;
-      border: none;
-    }
-    .services__content__inner__box{
-      gap: 5rem;
-    }
-    .services__content__description{
-      span:first-of-type{
-        margin-bottom: 5rem;
-      }
-      span:nth-child(3),
-      span:nth-child(4),
-      span:nth-child(5),
-      span:nth-child(6),
-      span:nth-child(7){
-        border-bottom: 1px solid $color-white;
-        padding: 1rem 0;
-      }
-    }
-    .services__content__button{
-      border: 1px solid $color-white;
-    }
-    .services__content__media{
-      position: absolute;
-      top: 200vh;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-    }
-    .services__content__media__image{
-      width: 100%;
-      height: 100vh;
-    }
-  }
-}
-
-.services__content--left{
-  display: flex;
-  flex-direction: row-reverse;
-
-  .services__content__wrapper{
-    width: 62rem;
-  }
-
-  .services__content__title{
-    padding: 0;
-    border: none;
-  }
-  .services__content__media{
-    width: 90rem;
-  }
-  .services__content__media__image{
-    width: 120%;
-  }
-}
-
-.services__content--right{
-  display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  padding: 15rem 5rem;
+  gap : 5rem;
 
-  &:nth-child(1){
-    justify-content: flex-start;
-    .services__content__wrapper{
-      padding-top: 8rem;
-      width: 43vw;
-    }
-    .services__content__label{
-      position: absolute;
-      top: 20rem;
-    }
-    .services__content__title{
-      padding: 0;
-      border: none;
-    }
-    .services__content__box {
-      flex-direction: column;
-    }
-    .services__content__inner__box{
-      gap: 5rem;
-    }
-    .services__content__media {
-      width: 55vw;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
+  @include media('<phone') {
+    flex-direction: column-reverse;
+    padding: 5rem;
   }
 }
 
-.services__content__title{
-  @extend %title-h2;
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 5rem;
-  max-width: 55vw;
-  border-bottom: 1px solid $color-black;
+.services__content__wrapper{
+  width: 43vw;
 
-}
-
-.services__content__box{
-  display: flex;
-  flex-direction: row;
-  max-width: 55vw;
-  padding: 5rem 0;
-  gap: 5rem;
-}
-
-.services__content__inner__box{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  @include media('<phone') {
+    width: 100%;
+  }
 }
 
 .services__content__label{
@@ -212,6 +25,26 @@
   text-transform: uppercase;
   white-space: nowrap;
   min-width: 40rem;
+  margin-bottom: 5rem;
+}
+
+.services__content__title{
+  @extend %title-h2;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+  @include media('<phone') {
+    padding-bottom: 5rem;
+    border-bottom: 1px solid $color-black;
+    width:100%;
+  }
+}
+
+.services__content__inner__box{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .services__content__description{
@@ -219,7 +52,9 @@
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  padding: 5rem 0;
 }
+
 
 .services__content__button{
   border: 1px solid $color-black;
@@ -228,7 +63,7 @@
   height: fit-content;
   border-radius: 3rem;
   text-transform: uppercase;
-  font-size: initial;
+  font-size: small;
 
   &:after{
     content:"→";
@@ -238,8 +73,18 @@
 
 .services__content__media{
   width: 77.5rem;
+  position: relative;
+  @include media('<phone') {
+    width: 100%;
+  }
 }
 
 .services__content__media__image{
-  width:100%
+  width:100%;
+  position: absolute;
+  bottom: 0;
+
+  @include media('<phone') {
+    position: relative;
+  }
 }

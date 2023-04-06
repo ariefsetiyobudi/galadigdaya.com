@@ -90,7 +90,11 @@
 
 %title-h2-m {
   font-family: $font-tomato-grotesk;
-  font-size: calc(70*(100vw - 320px)/1600)
+  font-size: calc(70*(100vw - 320px)/1600);
+
+  @include media('<phone') {
+    font-size: 4rem;
+  }
 }
 
 %title-h3 {

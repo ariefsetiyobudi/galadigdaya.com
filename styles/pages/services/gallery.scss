@@ -3,6 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include media('<phone'){
+    background-color: $color-cool-black;
+  }
 }
 .services__gallery__title{
   color: transparent;
@@ -12,14 +16,20 @@
   position: absolute;
   font-size: 38vw;
   margin: -10vw 0 0;
-  -webkit-text-stroke: 1px #000000;
+  -webkit-text-stroke: 1px $color-black;
   opacity: .2;
   text-transform: uppercase;
   white-space: nowrap;
+
+  @include media('<phone'){
+    height:55vh;
+    font-size: 100vw;
+    -webkit-text-stroke: 1px $color-white;
+  }
 }
 .services__gallery__wrapper{
   display: flex;
-  width: 375rem;
+  width: calc((30rem * 11) + 50rem);
   gap: 5rem;
   z-index: 1;
 }

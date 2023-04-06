@@ -5,14 +5,15 @@ block variables
 
 block content
   .home(data-background="#f4f4f4" data-color="#000000")
-    .embed__responsive__item
-      video.embed__responsive__video(autoplay muted loop)
-        source(src="/video" type="video/mp4")
     .home__wrapper
       each section in home.data.body
         if section.slice_type == 'content'
           section.home__content(class=`${section.primary.type === 'Left' ? 'home__content--left' : section.primary.type === 'Right' ? 'home__content--right' : 'home__content--background'}`)
             .home__content__wrapper
+              if section.primary.text =='Scroll Down'
+                .embed__responsive__item
+                  video.embed__responsive__video(autoplay muted loop)
+                    source(src="/video" type="video/mp4")
               h2.home__content__title(data-animation="title")
                 span!=section.primary.title.replace(/\n/g, '</span><span>')
               .home__content__box

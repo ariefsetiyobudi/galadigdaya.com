@@ -9,6 +9,10 @@
   flex-direction: row;
   justify-content: space-between;
   mix-blend-mode: difference;
+
+  @include media('<phone') {
+    display:none;
+  }
 }
 
 .navigation__link {

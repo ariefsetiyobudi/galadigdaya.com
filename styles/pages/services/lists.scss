@@ -1,6 +1,8 @@
 .services__lists{
-  height: 100vh;
-  padding: 20rem 5rem 5rem;
+  padding: 5rem;
+  @include media('<phone'){
+    padding-bottom: 15rem;
+  }
 }
 
 .services__lists__label{

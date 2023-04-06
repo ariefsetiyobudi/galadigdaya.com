@@ -3,11 +3,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 
   @include media('<phone'){
     background-color: $color-cool-black;
   }
-
 
   &:last-of-type{
     height: auto;
@@ -16,8 +17,12 @@
     .home__gallery__wrapper{
       flex-wrap: wrap;
       width: 100vw;
-      padding:0 5rem;
+      padding: 0 5rem;
       column-gap: 15rem;
+
+      @include media('<phone'){
+        column-gap: 5rem;
+      }
     }
     .home__gallery__title{
       @extend %title-30;
@@ -44,6 +49,11 @@
           opacity: 1;
         }
       }
+
+      @include media('<phone'){
+        width: calc((100vw - 30rem) / 5);
+        height: 6rem;
+      }
     }
     .home__gallery__media__image{
       width: 100%;
@@ -57,39 +67,28 @@
     @include media('<phone'){
       padding-bottom: 20rem;
       background-color: $color-cultured;
-      .home__gallery__wrapper{
-        padding:0 5rem;
-        column-gap: 5rem;
-      }
-      .home__gallery__media{
-        width: calc((100vw - 30rem) / 5);
-        height: 6rem;
-      }
     }
   }
 }
 .home__gallery__title{
-  color: transparent;
-  width: 100vw;
-  height: 40vw;
-  overflow: hidden;
   position: absolute;
-  font-size: 38vw;
-  margin: -10vw 0 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: transparent;
+  font-size: 40vw;
   -webkit-text-stroke: 1px $color-black;
   opacity: .2;
   text-transform: uppercase;
   white-space: nowrap;
 
   @include media('<phone'){
-    height:55vh;
     font-size: 100vw;
     -webkit-text-stroke: 1px $color-white;
   }
 }
 .home__gallery__wrapper{
   display: flex;
-  width: 300rem;
+  width: calc((50rem * 6) + 25rem);
   gap: 5rem;
   z-index: 1;
 }

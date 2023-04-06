@@ -2,33 +2,42 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20rem 5rem 5rem;
-  height: 100vh;
+  padding: 15rem 5rem 5rem;
+  gap : 5rem;
   @include media('<phone') {
-    padding: 10rem 5rem 5rem;
-    height: auto;
+    padding: 5rem;
+    &:first-of-type{
+      padding: 10rem 5rem 5rem;
+    }
   }
+}
+
+.company__content__wrapper{
+  width: calc(100vw - 10rem);
 }
 
 .company__content--background{
   display: flex;
   flex-direction: column;
 
-  .company__content__wrapper{
-    width: calc(100vw - 10rem);
-  }
+  .company__content__box{
+    flex-direction: row;
+    gap: 5rem;
 
-  .company__content__title{
-    max-width: 90%;
-    padding: 0;
-    border: none;
     @include media('<phone') {
-      max-width:calc(100vw - 10rem);
+      flex-direction: column;
+    }
+  }
+  .company__content__description{
+    width: calc((100% - 15rem) / 4);
+
+    @include media('<phone') {
+      width:100%;
     }
   }
 
-  .company__content__box{
-    max-width: calc(100vw - 10rem);
+  .company__content__media{
+    display: none;
   }
 }
 
@@ -36,97 +45,23 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
+  align-items: center;
+  padding: 5rem 15rem;
+  gap: 15rem;
 
-  .company__content__title{
-    padding: 0;
-    border: none;
-  }
   .company__content__box{
     flex-direction: column;
   }
-  .company__content__description{
-    width: calc(100vw - 10rem);
-  }
-  .company__content__media{
-    width: 50rem;
-    position: relative;
-  }
-  .company__content__media__image{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 
   @include media('<phone') {
-    flex-direction: column-reverse;
+    padding: 5rem;
+    gap: 5rem;
+
     .company__content__media{
-      width: calc(100vw - 10rem);
-    }
-    .company__content__media__image{
-      position: relative;
-      top: 0;
-      transform: unset;
-    }
-  }
-}
-
-.company__content--right{
-  display: flex;
-  flex-direction: row;
-
-  &:nth-child(6){
-    .company__content__wrapper{
-      padding-top: 8rem;
-    }
-    .company__content__label{
-      position: absolute;
-      top: calc(500vh + 20rem);
-    }
-    .company__content__title{
-      padding: 0;
-      border: none;
-    }
-    .company__content__box {
-      flex-direction: column;
-    }
-    .company__content__inner__box{
-      gap: 5rem;
+      display: none;
     }
   }
 
-  @include media('<phone') {
-    flex-direction: column;
-  }
-}
-
-.company__content__title{
-  @extend %title-h2;
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 5rem;
-  max-width: 55vw;
-  border-bottom: 1px solid $color-black;
-}
-
-.company__content__box{
-  display: flex;
-  flex-direction: row;
-  max-width: 55vw;
-  padding: 5rem 0;
-  gap: 5rem;
-
-  @include media('<phone') {
-    flex-direction: column;
-    max-width: calc(100vw - 10rem);
-  }
-}
-
-.company__content__inner__box{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .company__content__label{
@@ -138,14 +73,42 @@
   margin-bottom: 5rem;
 }
 
-.company__content__description{
-  line-height: 1.5;
-  width: calc((100vw - 10rem) / 4);
-
+.company__content__title{
+  @extend %title-h2;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
   @include media('<phone') {
+    padding-bottom: 5rem;
+    border-bottom: 1px solid $color-black;
     width:100%;
   }
 }
+
+.company__content__box{
+  display: flex;
+  flex-direction: row;
+  padding: 5rem 0;
+  gap: 5rem;
+
+  @include media('<phone') {
+    padding: 5rem 0 0;
+    flex-direction: column;
+    max-width: calc(100vw - 10rem);
+  }
+}
+
+.company__content__inner__box{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.company__content__description{
+  line-height: 1.5;
+}
+
 
 .company__content__button{
   border: 1px solid $color-black;
@@ -154,7 +117,7 @@
   height: fit-content;
   border-radius: 3rem;
   text-transform: uppercase;
-  font-size: initial;
+  font-size: small;
 
   &:after{
     content:"→";
