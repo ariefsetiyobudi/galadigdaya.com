@@ -58,7 +58,7 @@
       @include media('<phone') {
         width: 100%;
         margin: 0;
-        padding-bottom: 10rem;
+        padding-bottom: 20rem;
       }
     }
     .home__content__button{
@@ -72,7 +72,7 @@
 
       @include media('<phone') {
         position: absolute;
-        bottom: 10rem;
+        bottom: 20rem;
         right: 5rem;
       }
     }
