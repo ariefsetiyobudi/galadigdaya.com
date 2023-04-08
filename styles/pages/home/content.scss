@@ -11,6 +11,7 @@
 }
 
 .home__content--background{
+  overflow: hidden;
   position: relative;
   color: $color-white;
   &:first-of-type {
@@ -26,11 +27,14 @@
       position: relative;
       z-index: 2;
       span{
-        &:last-of-type{
-          padding-left: 20vw;
-          @include media('<phone') {
-            padding: 0;
+        span span{
+          width: 100%;
+          &:nth-child(2){
+            text-align: right;
           }
+        }
+        @include media('<phone') {
+          padding: 0;
         }
       }
 
@@ -93,7 +97,7 @@
         width: auto;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%)!important;
       }
     }
 
@@ -136,6 +140,7 @@
   &:nth-child(3){
     .home__content__wrapper{
       max-width: 62rem;
+      z-index: 2;
     }
     .home__content__title{
       padding: 0;
@@ -150,14 +155,13 @@
       gap: 5rem;
     }
     .home__content__description{
-      span:first-of-type{
-        margin-bottom: 5rem;
+      span:last-of-type{
+        width: 100%;
       }
-      span:nth-child(3),
-      span:nth-child(4),
-      span:nth-child(5),
-      span:nth-child(6),
-      span:nth-child(7){
+      span ul{
+        margin-top: 2.5rem;
+      }
+      span ul li{
         border-bottom: 1px solid $color-white;
         padding: 1rem 0;
 
@@ -190,6 +194,40 @@
       height: 100%;
     }
 
+    &:after {
+      content: "";
+      position: absolute;
+      height: 50rem;
+      width: 100vw;
+      z-index: 0;
+      left: 0;
+      bottom: 0;
+      background: rgb(0, 49, 92);
+      background: -moz-linear-gradient(
+        180deg,
+        rgba(0, 49, 92, 0) 0%,
+        rgba(0, 49, 92, 1) 96%,
+        rgba(0, 49, 92, 1) 100%
+      );
+      background: -webkit-linear-gradient(
+        180deg,
+        rgba(0, 49, 92, 0) 0%,
+        rgba(0, 49, 92, 1) 96%,
+        rgba(0, 49, 92, 1) 100%
+      );
+      background: linear-gradient(
+        180deg,
+        rgba(0, 49, 92, 0) 0%,
+        rgba(0, 49, 92, 1) 96%,
+        rgba(0, 49, 92, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00315C",endColorstr="#00315C",GradientType=1);
+
+      @include media('<phone'){
+        display: none;
+      }
+    }
+
     @include media('<phone'){
       color: $color-black;
       height:auto;
@@ -212,6 +250,10 @@
   .home__content__title{
     padding: 0;
     border: none;
+
+    @include media('<phone') {
+      max-width: 45vw;
+    }
   }
   .home__content__media{
     width: 90rem;
@@ -241,7 +283,7 @@
 }
 
 .home__content--right{
-  padding: 15rem 5rem 20rem;
+  padding: 20rem 5rem;
   display: flex;
   flex-direction: row;
 

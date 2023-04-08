@@ -9,7 +9,7 @@ html {
   @extend %cover;
   $vw: 100vw;
   font-size: calc($vw / 1920px * 10px);
-  // position: fixed;
+  position: fixed;
   line-height: 1;
   overflow: hidden;
   background: $color-cultured;
@@ -24,7 +24,7 @@ body {
   @extend %cover;
   font-family: $font-tomato-grotesk;
   @extend %description-20;
-  // position: fixed;
+  position: fixed;
 }
 
 a {
@@ -42,7 +42,7 @@ button {
 }
 
 img {
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.4s ease;
   vertical-align: middle;
 

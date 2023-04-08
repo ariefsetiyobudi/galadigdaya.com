@@ -85,18 +85,22 @@ const handleRequest = async (api) => {
 
   const assets = []
 
-  console.log(contact.data)
+  // console.log(home.data.body)
 
-  assets.push(home.data.body[0].primary.image.url)
-  assets.push(home.data.body[1].primary.image.url)
-  assets.push(home.data.body[2].primary.image.url)
-  home.data.body[3].items.forEach((item) => {
-    assets.push(item.image.url)
+  home.data.body.forEach((section) => {
+    if (section.slice_type === 'gallery') {
+      section.items.forEach((item) => {
+        assets.push(item.image.url)
+      })
+    }
   })
-  assets.push(home.data.body[4].primary.image.url)
-  assets.push(home.data.body[5].primary.image.url)
-  home.data.body[7].items.forEach((item) => {
-    assets.push(item.image.url)
+
+  services.data.body.forEach((section) => {
+    if (section.slice_type === 'gallery') {
+      section.items.forEach((item) => {
+        assets.push(item.image.url)
+      })
+    }
   })
 
   return {

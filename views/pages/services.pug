@@ -20,18 +20,18 @@ block content
                   span!=section.primary.description.replace(/\n/g, '</span><span>')
               if section.primary.text
                 if section.primary.link.slug
-                  a.services__content__button(href=section.primary.link.slug)=section.primary.text
+                  a.services__content__button(data-animation="highlight" href=section.primary.link.slug)=section.primary.text
                 else
-                  a.services__content__button(href="javascript:void(0)")=section.primary.text
+                  a.services__content__button(data-animation="highlight" href="javascript:void(0)")=section.primary.text
             figure.services__content__media
-              img.services__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
+              img.services__content__media__image(data-animation="highlight" alt=section.primary.image.alt data-src=section.primary.image.url)
         if section.slice_type == 'gallery'
           section.services__gallery
             h2.services__gallery__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
             .services__gallery__wrapper
               each media in section.items
                 figure.services__gallery__media
-                  img.services__gallery__media__image(alt=media.image.alt src=media.image.url)
+                  img.services__gallery__media__image(alt=media.image.alt data-src=media.image.url)
         if section.slice_type == 'lists'
           section.services__lists
             p.services__lists__label(data-animation="label")=section.primary.label

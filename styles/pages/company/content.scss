@@ -82,7 +82,7 @@
 
   span{
     @include media('<phone') {
-      max-width:90%;
+      max-width:100%;
     }
   }
   @include media('<phone') {

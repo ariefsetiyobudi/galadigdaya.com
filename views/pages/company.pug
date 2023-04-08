@@ -19,18 +19,31 @@ block content
                   .company__content__description(data-animation="paragraph")
                     span!=desc.description.replace(/\n/g, '</span><span>')
             figure.company__content__media
-              img.company__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
+              img.company__content__media__image(data-animation="highlight"  alt=section.primary.image.alt data-src=section.primary.image.url)
         if section.slice_type == 'gallery'
-          section.company__gallery
-            h2.company__gallery__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
-            .company__gallery__wrapper
+          section.company__gallery--2
+            h2.company__gallery__title--2(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
+            .company__gallery__wrapper--2
               each media in section.items
-                figure.company__gallery__media
-                  img.company__gallery__media__image(alt=media.image.alt src=media.image.url)
+                figure.company__gallery__media--2
+                  img.company__gallery__media__image--2(data-animation="highlight" alt=media.image.alt data-src=media.image.url)
         if section.slice_type == 'result'
           section.company__result
-            each text in section.items
-              .company__result__box
-                h2.company__result__title(data-animation="title")!=text.title
-                p.company__result__label(data-animation="label")!=text.label
+            .home__result__wrapper
+              each text in section.items
+                .company__result__box
+                  h2.company__result__title!=text.title
+                  p.company__result__label!=text.label
+              each text in section.items
+                .company__result__box
+                  h2.company__result__title!=text.title
+                  p.company__result__label!=text.label
+              each text in section.items
+                .company__result__box
+                  h2.company__result__title!=text.title
+                  p.company__result__label!=text.label
+              each text in section.items
+                .company__result__box
+                  h2.company__result__title!=text.title
+                  p.company__result__label!=text.label
       include ../partial/footer

@@ -3,7 +3,7 @@ footer.footer
   .footer__wrapper
     .footer__content
       figure.footer__content__media
-        img.footer__content__media__image(alt=footer.data.logo.alt src=footer.data.logo.url)
+        img.footer__content__media__image(data-animation="highlight" alt=footer.data.logo.alt src=footer.data.logo.url)
     each section in footer.data.body
       if section.slice_type == 'list'
         each data in section.items
@@ -21,15 +21,15 @@ footer.footer
                 li.footer__navigation__list__item
                   if item.link.slug !== 'home'
                     a.footer__navigation__list__link(href=`${item.link.slug}`)=item.text
-                  else 
+                  else
                     a.footer__navigation__list__link(href="/")=item.text
       if section.slice_type == 'download'
         .footer__content
           .footer__content__title=section.slice_type
           figure.footer__content__media
-            img.footer__content__media__image(alt=section.primary.download.alt src=section.primary.download.url)
-  .footer__cc 
-    .footer__copyright!=footer.data.copyright 
+            img.footer__content__media__image(data-animation="highlight" alt=section.primary.download.alt data-src=section.primary.download.url)
+  .footer__cc
+    .footer__copyright!=footer.data.copyright
     .footer__credit
       each credit in footer.data.credit
         p.footer__credit__text Credit :

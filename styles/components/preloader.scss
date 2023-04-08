@@ -1,8 +1,8 @@
 .preloader {
 	@extend %cover;
 	@extend %center;
-	background: $color-black;
-	color: $color-cultured;
+	background: $color-cool-black;
+	color: $color-white;
 	text-align: center;
 	z-index: z("preloader");
 }

@@ -5,36 +5,33 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-
-  @include media('<phone'){
-    background-color: $color-cool-black;
-  }
+  background-color: $color-cool-black;
 }
 .services__gallery__title{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   color: transparent;
   font-size: 40vw;
-  -webkit-text-stroke: 1px $color-black;
-  opacity: .2;
+  -webkit-text-stroke: 1px $color-white;
+  opacity: .2!important;
   text-transform: uppercase;
   white-space: nowrap;
 
+  @include animation('carousel 400s linear infinite running');
+
   @include media('<phone'){
     font-size: 100vw;
-    -webkit-text-stroke: 1px $color-white;
+    @include animation('carousel 100s linear infinite running');
   }
 }
 .services__gallery__wrapper{
+  position: absolute;
   display: flex;
-  width: calc((30rem * 11) + 50rem);
-  gap: 5rem;
   z-index: 1;
 }
 .services__gallery__media{
+  visibility: hidden;
   width: 30rem;
   height: 40rem;
+  margin: 0 2.5rem;
 }
 .services__gallery__media__image{
   width: 100%;
