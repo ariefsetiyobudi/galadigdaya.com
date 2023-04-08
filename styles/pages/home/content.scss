@@ -39,7 +39,7 @@
       }
 
       @include media('<phone') {
-        padding: 0;
+        padding: 5rem 0;
         align-items: center;
       }
     }
@@ -129,6 +129,9 @@
         rgba(92, 58, 0, 1) 100%
       );
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5C3A00",endColorstr="#5C3A00",GradientType=1);
+      @include media('<phone'){
+        height: 70vh;
+      }
     }
 
     @include media('<phone'){
