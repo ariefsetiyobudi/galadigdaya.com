@@ -81,7 +81,7 @@
       @include media('<phone') {
         position: absolute;
         bottom: 10rem;
-        right: 5rem;
+        right: 0;
       }
     }
     .home__content__media{
@@ -171,6 +171,7 @@
     }
   }
   &:nth-child(3){
+    padding: 15rem 5rem 0;
     .home__content__wrapper{
       max-width: 62rem;
       z-index: 2;
@@ -448,6 +449,7 @@
 
 .home__content__link__icon{
   position: absolute;
+  width: 100%;
 }
 
 .home__content__link__icon__path{
