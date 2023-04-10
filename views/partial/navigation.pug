@@ -6,4 +6,25 @@ nav.navigation
     each item in navigation.data.list
       li.navigation__list__item
         a.navigation__list__link(href=Link(item.link))=item.text
+    li.navigation__list__item.mode
+      input#switch.mode_toggle(type='checkbox' name='mode')
+      label(for='switch') Toggle
+  .navigation__mobile__button
+    span.navigation__mobile__menu
+    span.navigation__mobile__menu
+  .navigation__mobile
+    .navigation__mobile__wrapper
+      ul.navigation__mobile__list
+        each item in navigation.data.list
+          li.navigation__mobile__list__item
+            a.navigation__mobile__list__link(href=Link(item.link))=item.text
+      .navigation__mobile__content
+        .navigation__mobile__content__office(data-animation="highlight")!=contact.data.text_1.replace(/\n/g, '<br>')
+        .navigation__mobile__content__contact(data-animation="highlight")!=contact.data.text_2.replace(/\n/g, '<br>')
+        .navigation__mobile__content__download(data-animation="highlight") Scan code below to get our Company Profile
+        figure.navigation__mobile__content__media
+          each section in footer.data.body
+            if section.slice_type == 'download'
+              img.navigation__mobile__content__media__image(data-animation="highlight" alt=section.primary.download.alt data-src=section.primary.download.url)
+
 

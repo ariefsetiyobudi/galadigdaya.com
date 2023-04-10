@@ -20,10 +20,12 @@
 
 .scrolltop__button{
   color: $color-black;
-  border: 1px solid $color-black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem 2rem;
   width: fit-content;
-  height: fit-content;
+  height: 5rem;
   border-radius: 3rem;
   text-transform: uppercase;
   font-size: initial;
@@ -31,15 +33,31 @@
   right: 5rem;
   margin-top: -12rem;
 
+  span{
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    vertical-align: middle;
+  }
+
   &:after{
     content:"↑";
     margin-left: 1rem;
   }
 
-  @include media("<phone") {
+  @include media('<phone') {
     font-size: small;
-	}
+  }
 }
+
+.scrolltop__link__icon{
+  position: absolute;
+}
+
+.scrolltop__link__icon__path{
+  stroke: $color-black;
+}
+
 .footer__wrapper{
   display: flex;
   flex-direction: row;

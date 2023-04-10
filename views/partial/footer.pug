@@ -1,5 +1,9 @@
 footer.footer
-  a.scrolltop__button(href="#content") Scroll Top
+  a.scrolltop__button(data-animation="button" target="" href="javascript:void(0)")
+    span Scroll Top
+    svg.scrolltop__link__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 39")
+      path(opacity="0.5" stroke="currentColor" fill="none" d="m 19.5,0 h 163 C 193.303,0 202,8.697 202,19.5 202,30.303 193.303,39 182.5,39 H 19.5 C 8.697,39 0,30.303 0,19.5 0,8.697 8.697,0 19.5,0 Z")
+      path.scrolltop__link__icon__path(stroke="#000000" fill="none" d="m 19.5,0.5 h 163 c 10.526,0 19,8.474 19,19 0,10.526 -8.474,19 -19,19 h -163 c -10.526,0 -19,-8.474 -19,-19 0,-10.526 8.474,-19 19,-19 z")
   .footer__wrapper
     .footer__content
       figure.footer__content__media
@@ -19,10 +23,7 @@ footer.footer
             ul.footer__navigation__list
               each item in section.items
                 li.footer__navigation__list__item
-                  if item.link.slug !== 'home'
-                    a.footer__navigation__list__link(href=`${item.link.slug}`)=item.text
-                  else
-                    a.footer__navigation__list__link(href="/")=item.text
+                  a.footer__navigation__list__link(href=Link(item.link))=item.text
       if section.slice_type == 'download'
         .footer__content
           .footer__content__title=section.slice_type

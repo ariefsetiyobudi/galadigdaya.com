@@ -16,10 +16,9 @@ block content
             .contact__content__office(data-animation="highlight")!=contact.data.text_1.replace(/\n/g, '<br>')
             .contact__content__contact(data-animation="highlight")!=contact.data.text_2.replace(/\n/g, '<br>')
             .contact__content__download(data-animation="highlight") Scan code below to get our Company Profile
-            .contact__content__code
-              figure.contact__content__media
-                each section in footer.data.body
-                  if section.slice_type == 'download'
-                    img.contact__content__media__image(data-animation="highlight" alt=section.primary.download.alt data-src=section.primary.download.url)
+            figure.contact__content__media
+              each section in footer.data.body
+                if section.slice_type == 'download'
+                  img.contact__content__media__image(data-animation="highlight" alt=section.primary.download.alt data-src=section.primary.download.url)
       include ../partial/footer
 

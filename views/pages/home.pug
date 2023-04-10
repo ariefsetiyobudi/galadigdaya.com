@@ -25,9 +25,17 @@ block content
                     span!=section.primary.description.replace(/\n/g, '</span><span>')
                   if section.primary.text
                     if section.primary.link.slug
-                      a.home__content__button(data-animation="highlight" href=section.primary.link.slug)=section.primary.text
+                      a.home__content__button(data-animation="button" href=Link(section.primary.link))
+                        span=section.primary.text
+                        svg.home__content__link__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 39")
+                          path(opacity="0.5" stroke="currentColor" fill="none" d="m 19.5,0 h 163 C 193.303,0 202,8.697 202,19.5 202,30.303 193.303,39 182.5,39 H 19.5 C 8.697,39 0,30.303 0,19.5 0,8.697 8.697,0 19.5,0 Z")
+                          path.home__content__link__icon__path(stroke="#000000" fill="none" d="m 19.5,0.5 h 163 c 10.526,0 19,8.474 19,19 0,10.526 -8.474,19 -19,19 h -163 c -10.526,0 -19,-8.474 -19,-19 0,-10.526 8.474,-19 19,-19 z")
                     else
-                      a.home__content__button(data-animation="highlight" href="javascript:void(0)")=section.primary.text
+                      a.home__content__button.scrolldown__button(data-animation="button" target="" href="javascript:void(0)")
+                        span=section.primary.text
+                        svg.home__content__link__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 39")
+                          path(opacity="0.5" stroke="currentColor" fill="none" d="m 19.5,0 h 163 C 193.303,0 202,8.697 202,19.5 202,30.303 193.303,39 182.5,39 H 19.5 C 8.697,39 0,30.303 0,19.5 0,8.697 8.697,0 19.5,0 Z")
+                          path.home__content__link__icon__path(stroke="#FFFFFF" fill="none" d="m 19.5,0.5 h 163 c 10.526,0 19,8.474 19,19 0,10.526 -8.474,19 -19,19 h -163 c -10.526,0 -19,-8.474 -19,-19 0,-10.526 8.474,-19 19,-19 z")
             figure.home__content__media
               img.home__content__media__image(data-animation="highlight" alt=section.primary.image.alt data-src=section.primary.image.url)
         if section.slice_type == 'gallery'

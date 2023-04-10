@@ -5,6 +5,10 @@
   padding: 15rem 5rem;
   gap : 5rem;
 
+  &:first-of-type{
+    padding: 15rem 5rem 20rem;
+  }
+
   @include media('<phone') {
     flex-direction: column-reverse;
     padding: 5rem;
@@ -12,7 +16,8 @@
 }
 
 .services__content__wrapper{
-  width: 43vw;
+  position: relative;
+  width: 45vw;
 
   @include media('<phone') {
     width: 100%;
@@ -62,18 +67,39 @@
 
 
 .services__content__button{
-  border: 1px solid $color-black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem 2rem;
   width: fit-content;
-  height: fit-content;
+  height: 5rem;
   border-radius: 3rem;
   text-transform: uppercase;
-  font-size: small;
+  font-size: initial;
+
+  span{
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    vertical-align: middle;
+  }
 
   &:after{
     content:"→";
     margin-left: 1rem;
   }
+
+  @include media('<phone') {
+    font-size: small;
+  }
+}
+
+.services__content__link__icon{
+  position: absolute;
+}
+
+.services__content__link__icon__path{
+  stroke: $color-black;
 }
 
 .services__content__media{

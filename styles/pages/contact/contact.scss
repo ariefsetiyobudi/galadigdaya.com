@@ -11,6 +11,9 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 15rem 5rem;
+  @include media('<phone') {
+    padding: 20rem 5rem;
+  }
 }
 
 .contact__content__box{
@@ -46,14 +49,14 @@
 
 .contact__content__office{
   line-height: 1.5;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $color-black;
   padding-bottom: 2.5rem;
 }
 
 .contact__content__contact{
   line-height: 1.5;
   margin-top: -2.5rem;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $color-black;
   padding-bottom: 2.5rem;
 }
 

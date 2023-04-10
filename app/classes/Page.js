@@ -10,6 +10,7 @@ import Title from 'animations/Title'
 import Paragraph from 'animations/Paragraph'
 import Label from 'animations/Label'
 import Highlight from 'animations/Highlight'
+import Buttons from 'animations/Buttons'
 
 import AsyncLoad from 'classes/AsyncLoad'
 
@@ -20,10 +21,11 @@ export default class Page {
     this.selector = element
     this.selectorChildren = {
       preloaders: '[data-src]',
-      aimationsHighlights: '[data-animation="highlight"]',
       animationsTitles: '[data-animation="title"]',
+      aimationsHighlights: '[data-animation="highlight"]',
       animationsParagraphs: '[data-animation="paragraph"]',
       animationsLabels: '[data-animation="label"]',
+      animationsButtons: '[data-animation="button"]',
       ...elements
     }
 
@@ -89,6 +91,16 @@ export default class Page {
   createAnimations () {
     this.animations = []
 
+    // Buttons
+
+    this.animationsButtons = map(this.elements.animationsButtons, (element) => {
+      return new Buttons({
+        element
+      })
+    })
+
+    this.animations.push(...this.animationsButtons)
+
     // Titles
 
     this.animationsTitles = map(this.elements.animationsTitles, (element) => {
@@ -101,14 +113,11 @@ export default class Page {
 
     // Paragraphs
 
-    this.animationsParagraphs = map(
-      this.elements.animationsParagraphs,
-      (element) => {
-        return new Paragraph({
-          element
-        })
-      }
-    )
+    this.animationsParagraphs = map(this.elements.animationsParagraphs, (element) => {
+      return new Paragraph({
+        element
+      })
+    })
 
     this.animations.push(...this.animationsParagraphs)
 
@@ -124,14 +133,11 @@ export default class Page {
 
     // Highlights
 
-    this.aimationsHighlights = map(
-      this.elements.aimationsHighlights,
-      (element) => {
-        return new Highlight({
-          element
-        })
-      }
-    )
+    this.aimationsHighlights = map(this.elements.aimationsHighlights, (element) => {
+      return new Highlight({
+        element
+      })
+    })
 
     this.animations.push(...this.aimationsHighlights)
   }
