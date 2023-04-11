@@ -13,7 +13,8 @@ export default class Navigation extends Component {
         links: '.navigation__list__link',
         mobileButton: '.navigation__mobile__button',
         mobileButtonLines: '.navigation__mobile__menu',
-        mobileMenu: '.navigation__mobile'
+        mobileMenu: '.navigation__mobile',
+        mobileItem: '.navigation__mobile__list__item'
       }
     })
 
@@ -56,6 +57,7 @@ export default class Navigation extends Component {
   }
 
   onClick () {
+    this.element.classList.toggle('open')
     this.elements.mobileButton.classList.toggle('open')
     this.elements.mobileMenu.classList.toggle('open')
   }
@@ -64,9 +66,15 @@ export default class Navigation extends Component {
     this.menuEvent = this.onClick.bind(this)
 
     this.elements.mobileButton.addEventListener('click', this.menuEvent)
+    this.elements.mobileItem.forEach((item) => {
+      item.addEventListener('click', this.menuEvent)
+    })
   }
 
   removeEventListeners () {
     this.elements.mobileButton.removeEventListener('click', this.menuEvent)
+    this.elements.mobileItem.forEach((item) => {
+      item.removeEventListener('click', this.menuEvent)
+    })
   }
 }

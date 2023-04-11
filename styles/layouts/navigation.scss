@@ -8,6 +8,14 @@
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+
+  &.open {
+    .navigation__link{
+      @include media('<phone') {
+        color: $color-white!important;
+      }
+    }
+  }
 }
 
 .navigation__link {
@@ -86,10 +94,10 @@
     &.open{
       .navigation__mobile__menu:first-of-type{
         transform: rotate(-45deg);
-        top: 3rem;
       }
 
       .navigation__mobile__menu {
+        background: $color-white!important;
         transform: rotate(45deg);
         top: 3rem;
       }
