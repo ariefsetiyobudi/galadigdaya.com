@@ -1,7 +1,7 @@
 import { Mesh, Program } from 'ogl'
 import GSAP from 'gsap'
 
-// import Detection from 'classes/Detection'
+import Detection from 'classes/Detection'
 
 import vertex from 'shaders/plane-vertex.glsl'
 import fragment from 'shaders/plane-fragment.glsl'
@@ -119,10 +119,10 @@ export default class Media {
   updateY (y = 0) {
     this.y = (this.bounds.top + y) / window.innerHeight
 
-    // const extra = Detection.isPhone() ? 30 : 80
+    const extra = Detection.isPhone() ? 30 : 80
 
     this.mesh.position.y = (this.sizes.height / 2) - (this.mesh.scale.y / 2) - (this.y * this.sizes.height) // prettier-ignore
-    // this.mesh.position.y += Math.cos((this.mesh.position.x / this.sizes.width) * Math.PI * 0.1) * extra - extra // prettier-ignore
+    this.mesh.position.y += Math.cos((this.mesh.position.x / this.sizes.width) * Math.PI * 0.1) * extra - extra // prettier-ignore
   }
 
   update (scroll) {

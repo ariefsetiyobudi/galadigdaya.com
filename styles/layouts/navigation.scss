@@ -34,7 +34,6 @@
 
   @include media('<phone') {
     width: 22rem;
-    z-index: 1;
     font-size: 3.6rem;
   }
 }
@@ -159,7 +158,7 @@
 .navigation__mobile__content{
   @include media('<phone'){
     position: absolute;
-    bottom: 10rem;
+    bottom: 20rem;
     width: calc(100vw - 10rem);
     display: flex;
     flex-direction: column;
@@ -179,11 +178,18 @@
   padding-bottom: 2.5rem;
 }
 
+.navigation__mobile__content__download{
+  @include media('<phone') {
+    display: none;
+  }
+}
+
 .navigation__mobile__content__media{
   width: 15rem;
 
   @include media('<phone') {
     width: 25rem;
+    display: none;
   }
 }
 
@@ -235,7 +241,8 @@ label:after {
 }
 
 input:checked + label {
-  background: $color-cool-black;
+  background: $color-black;
+  border-color: $color-white;
 }
 
 input:checked + label:after {

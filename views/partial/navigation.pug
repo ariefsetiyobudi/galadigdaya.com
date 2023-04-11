@@ -7,7 +7,7 @@ nav.navigation
       li.navigation__list__item
         a.navigation__list__link(href=Link(item.link))=item.text
     li.navigation__list__item.mode
-      input#switch.mode_toggle(type='checkbox' name='mode')
+      input#switch.mode_toggle(type='checkbox' name='mode' checked=false)
       label(for='switch') Toggle
   a.navigation__mobile__button(href="javascript:void(0)" target="")
     span.navigation__mobile__menu

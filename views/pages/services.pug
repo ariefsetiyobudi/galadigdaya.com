@@ -29,7 +29,7 @@ block content
               img.services__content__media__image(data-animation="highlight" alt=section.primary.image.alt data-src=section.primary.image.url)
         if section.slice_type == 'gallery'
           section.services__gallery
-            h2.services__gallery__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
+            h2.services__gallery__title(data-animation="highlight")!=section.primary.title.replace(/\n/g, '<br>')
             .services__gallery__wrapper
               each media in section.items
                 figure.services__gallery__media

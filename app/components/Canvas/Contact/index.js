@@ -1,84 +1,32 @@
-import { Plane, Transform } from 'ogl'
-import map from 'lodash/map'
-import Gallery from './Gallery'
 export default class {
   constructor ({ gl, scene, sizes }) {
     this.gl = gl
+    this.scene = scene
     this.sizes = sizes
     this.wrapper = document.querySelector('.contact__wrapper')
-
-    this.group = new Transform()
-
-    this.createGeometry()
-    this.createGalleries()
-
-    this.onResize({
-      sizes: this.sizes
-    })
-
-    this.group.setParent(scene)
-
-    this.show()
   }
 
-  createGeometry () {
-    this.geometry = new Plane(this.gl)
-  }
+  show () {}
 
-  createGalleries () {
-    this.galleriesElements = document.querySelectorAll('.contact__gallery')
-
-    this.galleries = map(this.galleriesElements, (element, index) => {
-      return new Gallery({
-        element,
-        geometry: this.geometry,
-        index,
-        gl: this.gl,
-        scene: this.group,
-        sizes: this.sizes
-      })
-    })
-  }
-
-  // Animations
-
-  show () {
-    map(this.galleries, (gallery) => gallery.show())
-  }
-
-  hide () {
-    map(this.galleries, (gallery) => gallery.hide())
-  }
+  hide () {}
 
   // Events
 
-  onResize (e) {
-    map(this.galleries, (gallery) => gallery.onResize(e))
-  }
+  onResize () {}
 
-  onTouchDown (e) {
-    map(this.galleries, (gallery) => gallery.onTouchDown(e))
-  }
+  onTouchDown () {}
 
-  onTouchMove (e) {
-    map(this.galleries, (gallery) => gallery.onTouchMove(e))
-  }
+  onTouchMove () {}
 
-  onTouchUp (e) {
-    map(this.galleries, (gallery) => gallery.onTouchUp(e))
-  }
+  onTouchUp () {}
 
   onWheel ({ pixelX, pixelY }) {}
 
   // Update
 
-  update (scroll) {
-    map(this.galleries, (gallery) => gallery.update(scroll))
-  }
+  update () {}
 
   // Destroy
 
-  destroy () {
-    map(this.galleries, (gallery) => gallery.destroy())
-  }
+  destroy () {}
 }

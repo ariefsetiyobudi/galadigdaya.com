@@ -1,7 +1,12 @@
+#content[mode='dark']{
+  .services__gallery{
+    background-color: $color-black;
+  }
+}
+
 .services__gallery{
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   overflow: hidden;

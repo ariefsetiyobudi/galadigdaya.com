@@ -6,9 +6,6 @@
   position: relative;
   padding-bottom: 10rem;
 
-  @include media('<phone'){
-    padding-bottom: 20rem;
-  }
 }
 
 .home__gallery__title--2{

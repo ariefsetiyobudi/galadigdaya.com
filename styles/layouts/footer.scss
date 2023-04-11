@@ -1,3 +1,15 @@
+#content[mode='dark']{
+  .footer{
+    background: $color-black;
+  }
+  .scrolltop__button{
+    color: $color-white;
+  }
+  .scrolltop__link__icon__path{
+    stroke: $color-white;
+  }
+}
+
 .footer{
   position: relative;
   display: flex;
