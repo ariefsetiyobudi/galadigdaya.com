@@ -84,41 +84,15 @@ export default class Button extends Component {
     this.timeline.reverse()
   }
 
-  onClick () {
-    const scrolldown = this.element.classList.contains('scrolldown__button')
-    const scrolltop = this.element.classList.contains('scrolltop__button')
-    const scrolldown_target = document.querySelector('.home__content--right')
-    const wrapper = document.querySelector('.home__wrapper')
-    if (scrolldown) {
-      GSAP.to(wrapper, {
-        y: -scrolldown_target.offsetTop,
-        duration: 1.5,
-        ease: 'none'
-      })
-      this.timeline.play()
-    }
-    if (scrolltop) {
-      GSAP.to(wrapper, {
-        y: 0,
-        duration: 1.5,
-        ease: 'none'
-      })
-      this.timeline.play()
-    }
-  }
-
   addEventListeners () {
-    this.onClickEvent = this.onClick.bind(this)
     this.onMouseEnterEvent = this.onMouseEnter.bind(this)
     this.onMouseLeaveEvent = this.onMouseLeave.bind(this)
 
-    this.element.addEventListener('click', this.onClickEvent)
     this.element.addEventListener('mouseenter', this.onMouseEnterEvent)
     this.element.addEventListener('mouseleave', this.onMouseLeaveEvent)
   }
 
   removeEventListeners () {
-    this.element.removeEventListener('click', this.onClickEvent)
     this.element.removeEventListener('mouseenter', this.onMouseEnterEvent)
     this.element.removeEventListener('mouseleave', this.onMouseLeaveEvent)
   }

@@ -1,6 +1,5 @@
 import GSAP from 'gsap'
 import Animation from '../classes/Animation'
-// import { calculate, split } from 'utils/text'
 
 export default class Buttons extends Animation {
   constructor ({ element, elements }) {
