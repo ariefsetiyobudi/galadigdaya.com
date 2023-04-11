@@ -11,8 +11,9 @@ export default class Navigation extends Component {
       elements: {
         items: '.navigation__list__item',
         links: '.navigation__list__link',
-        mobile__button: '.navigation__mobile__menu',
-        mobile__menu: '.navigation__mobile'
+        mobileButton: '.navigation__mobile__button',
+        mobileButtonLines: '.navigation__mobile__menu',
+        mobileMenu: '.navigation__mobile'
       }
     })
 
@@ -28,11 +29,11 @@ export default class Navigation extends Component {
       autoAlpha: 1
     })
     if (template === 'home') {
-      GSAP.to(this.elements.mobile__button, {
+      GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_WHITE
       })
 
-      GSAP.to(this.elements.mobile__menu, {
+      GSAP.to(this.elements.mobileMenu, {
         color: COLOR_WHITE
       })
 
@@ -40,11 +41,11 @@ export default class Navigation extends Component {
         color: COLOR_WHITE
       })
     } else {
-      GSAP.to(this.elements.mobile__button, {
+      GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_BLACK
       })
 
-      GSAP.to(this.elements.mobile__menu, {
+      GSAP.to(this.elements.mobileMenu, {
         color: COLOR_WHITE
       })
 
@@ -52,5 +53,20 @@ export default class Navigation extends Component {
         color: COLOR_BLACK
       })
     }
+  }
+
+  onClick () {
+    this.elements.mobileButton.classList.toggle('open')
+    this.elements.mobileMenu.classList.toggle('open')
+  }
+
+  addEventListeners () {
+    this.menuEvent = this.onClick.bind(this)
+
+    this.elements.mobileButton.addEventListener('click', this.menuEvent)
+  }
+
+  removeEventListeners () {
+    this.elements.mobileButton.removeEventListener('click', this.menuEvent)
   }
 }
