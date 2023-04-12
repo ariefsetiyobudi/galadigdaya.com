@@ -165,13 +165,13 @@ app.get('/video', async (req, res) => {
 
   // Parse Range
   // Example: "bytes=32324-"
-  const CHUNK_SIZE = 10 ** 6 // 1MB
-  const start = Number(range.replace(/\D/g, ''))
-  const end = Math.min(start + CHUNK_SIZE, videoSize - 1)
+  // const CHUNK_SIZE = 10 ** 6 // 1MB
+  // const start = Number(range.replace(/\D/g, ''))
+  // const end = Math.min(start + CHUNK_SIZE, videoSize - 1)
 
-  // const CHUNK_SIZE = range.replace(/bytes=/, '').split('-')
-  // const start = parseInt(CHUNK_SIZE[0], 10)
-  // const end = CHUNK_SIZE[1] ? parseInt(CHUNK_SIZE[1], 10) : videoSize - 1
+  const CHUNK_SIZE = range.replace(/bytes=/, '').split('-')
+  const start = parseInt(CHUNK_SIZE[0], 10)
+  const end = CHUNK_SIZE[1] ? parseInt(CHUNK_SIZE[1], 10) : videoSize - 1
 
   // Create headers
   const contentLength = end - start + 1
@@ -179,7 +179,9 @@ app.get('/video', async (req, res) => {
     'Content-Range': `bytes ${start}-${end}/${videoSize}`,
     'Accept-Ranges': 'bytes',
     'Content-Length': contentLength,
-    'Content-Type': 'video/mp4'
+    'Content-Type': 'video/mp4',
+    'Access-Control-Allow-Credentials': true,
+    'Access-Control-Allow-Origin': '*'
   }
 
   // HTTP Status 206 for Partial Content
