@@ -27,6 +27,7 @@
   width: 12.8rem;
   pointer-events: auto;
   transition: opacity 0.4s ease;
+  z-index: 1;
 
   &:hover {
     opacity: 0.5;
