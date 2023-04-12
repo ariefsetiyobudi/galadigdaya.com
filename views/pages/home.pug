@@ -12,7 +12,7 @@ block content
             .home__content__wrapper
               if section.primary.text =='Scroll Down'
                 .embed__responsive__item
-                  video.embed__responsive__video(autoplay muted loop)
+                  video.embed__responsive__video(autoplay muted loop playsinline)
                     source(src="/video" type="video/mp4")
               h2.home__content__title(data-animation="title")
                 span!=section.primary.title.replace(/\n/g, '</span><span>')
