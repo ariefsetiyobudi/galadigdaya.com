@@ -161,7 +161,7 @@ app.get('/video', async (req, res) => {
 
   // get video stats (about 61MB)
   const videoPath = 'public/pexels-kelly-lacy-6595364.mp4'
-  const videoSize = fs.statSync('public/pexels-kelly-lacy-6595364.mp4').size
+  const videoSize = fs.statSync(videoPath).size
 
   // Parse Range
   // Example: "bytes=32324-"
