@@ -153,8 +153,6 @@ app.get('/contact', async (req, res) => {
 })
 
 app.get('/video', async (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
   // Ensure there is a range given for the video
   const range = req.headers.range
   if (!range) {
