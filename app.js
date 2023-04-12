@@ -152,8 +152,6 @@ app.get('/contact', async (req, res) => {
   })
 })
 
-// Stream Video
-
 app.get('/video', async (req, res) => {
   const path = 'public/pexels-kelly-lacy-6595364.mp4'
   const stat = fs.statSync(path)
@@ -183,13 +181,6 @@ app.get('/video', async (req, res) => {
 
     res.writeHead(206, head)
     file.pipe(res)
-  } else {
-    const head = {
-      'Content-Length': fileSize,
-      'Content-Type': 'video/mp4'
-    }
-    res.writeHead(200, head)
-    fs.createReadStream(path).pipe(res)
   }
 })
 
