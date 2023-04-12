@@ -2,13 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15rem 5rem 5rem;
+  padding: 15rem 5rem;
   gap : 5rem;
+
   @include media('<phone') {
     padding: 5rem;
-    &:first-of-type{
-      padding: 10rem 5rem 5rem;
-    }
   }
 }
 
@@ -19,6 +17,20 @@
 .company__content--background{
   display: flex;
   flex-direction: column;
+
+  &:first-of-type{
+    padding-top: 20rem;
+    @include media('<phone') {
+      padding: 10rem 5rem 5rem;
+
+    }
+  }
+  &:nth-child(3){
+    @include media('<phone') {
+      padding: 10rem 5rem 15rem;
+
+    }
+  }
 
   .company__content__box{
     flex-direction: row;

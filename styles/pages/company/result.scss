@@ -1,3 +1,8 @@
+#content[mode='dark']{
+  .company__result{
+    border-color: $color-cultured-opacity;
+  }
+}
 .company__result{
   display: flex;
   flex-direction: row;

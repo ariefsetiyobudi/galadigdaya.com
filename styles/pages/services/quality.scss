@@ -1,7 +1,13 @@
+#content[mode='dark']{
+  .service__quality__inner__box{
+    border-color: $color-cultured-opacity;
+  }
+}
+
 .services__quality{
   display: flex;
   flex-direction: row;
-  padding: 15rem 5rem;
+  padding: 20rem 5rem;
   gap: 5rem;
 
   @include media('<phone') {
@@ -37,8 +43,14 @@
   display: flex;
   flex-direction: row;
   gap: 5rem;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $color-black;
   padding: 2rem 0;
+
+  &:last-of-type{
+    @include media('<phone') {
+      border: none;
+    }
+  }
 }
 
 .services__quality__label__right{

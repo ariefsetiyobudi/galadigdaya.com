@@ -8,16 +8,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15rem 5rem;
+  padding: 20rem 5rem;
   gap : 5rem;
-
-  &:first-of-type{
-    padding: 10rem 5rem 5rem;
-  }
 
   @include media('<phone') {
     flex-direction: column-reverse;
-    padding: 5rem;
+    padding: 15rem 5rem 5rem;
   }
 }
 

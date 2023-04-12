@@ -47,13 +47,12 @@
   display: flex;
   flex-direction: row;
   gap: 5rem;
-
-  @include media('<phone') {
-    display:none;
-  }
 }
 .navigation__list__item {
   pointer-events: auto;
+  @include media('<phone'){
+    visibility: hidden!important;
+  }
 }
 .navigation__list__link {
   @extend %link--hidden;
@@ -157,6 +156,7 @@
 
 .navigation__mobile__content{
   @include media('<phone'){
+    color: $color-white;
     position: absolute;
     bottom: 20rem;
     width: calc(100vw - 10rem);
@@ -201,6 +201,13 @@
 
 .mode{
   display: flex;
+  @include media('<phone'){
+    visibility: visible!important;
+    position: fixed;
+    top: 6.3rem;
+    right: 16rem;
+    z-index: 1;
+  }
 }
 
 input[type=checkbox] {
@@ -224,6 +231,15 @@ label {
   border-radius: 100px;
   position: relative;
   border: 0.15rem solid $color-cool-black;
+
+  @include media('<phone'){
+    text-indent: 3rem;
+    width: 12rem;
+    height: 4rem;
+    font-size: small;
+    color: $color-cool-black;
+    text-transform: uppercase;
+  }
 }
 
 label:after {
@@ -237,12 +253,23 @@ label:after {
   position: absolute;
   top: 0.185rem;
   left: 0.3rem;
- transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+
+  @include media('<phone'){
+    width: 3rem;
+    height: 3rem;
+    top: 0.4rem;
+    left: 0.4rem;
+  }
 }
 
 input:checked + label {
   background: $color-black;
   border-color: $color-white;
+  @include media('<phone'){
+    color: $color-white;
+    text-indent: -3rem;
+  }
 }
 
 input:checked + label:after {

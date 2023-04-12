@@ -73,6 +73,10 @@ export default class Navigation extends Component {
   }
 
   lightMode () {
+    GSAP.to(document.querySelector('.navigation__mobile'), {
+      background: COLOR_COOL_BLACK,
+      color: COLOR_WHITE
+    })
     GSAP.to(document.querySelector('#content'), {
       background: COLOR_CULTURED,
       color: COLOR_BLACK
@@ -105,6 +109,10 @@ export default class Navigation extends Component {
   }
 
   darkMode () {
+    GSAP.to(document.querySelector('.navigation__mobile'), {
+      background: COLOR_BLACK,
+      color: COLOR_WHITE
+    })
     GSAP.to(document.querySelector('#content'), {
       background: COLOR_BLACK,
       color: COLOR_WHITE
@@ -139,9 +147,11 @@ export default class Navigation extends Component {
   switchEvents () {
     if (this.elements.switchButton.checked) {
       document.querySelector('#content').setAttribute('mode', 'dark')
+      document.querySelector('.mode label').innerText = 'Dark'
       this.darkMode()
     } else {
       document.querySelector('#content').setAttribute('mode', 'light')
+      document.querySelector('.mode label').innerText = 'Light'
       this.lightMode()
     }
   }

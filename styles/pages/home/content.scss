@@ -1,4 +1,7 @@
 #content[mode='dark']{
+  .home__content__title{
+    border-color: $color-cultured-opacity;
+  }
   .home__content--background{
     &:first-of-type{
       &::before {
@@ -51,6 +54,7 @@
       }
     }
     &:nth-child(3){
+      color: $color-white;
       &::before {
         z-index: 2;
         top:0;
@@ -98,6 +102,13 @@
           rgba(0, 0, 0, 1) 100%
         );
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000",endColorstr="#000",GradientType=1);
+      }
+
+      .home__content__description{
+        span ul li{
+          border-color: $color-cultured-opacity;
+
+        }
       }
     }
   }
@@ -475,6 +486,10 @@
         width: 100%;
         margin-bottom: 5rem;
       }
+    }
+
+    @include media('<phone') {
+      padding-bottom: 10rem;
     }
   }
 
