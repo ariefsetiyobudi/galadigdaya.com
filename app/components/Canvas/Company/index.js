@@ -1,8 +1,7 @@
 export default class {
-  constructor ({ gl, scene, sizes }) {
+  constructor ({ gl, scene }) {
     this.gl = gl
     this.scene = scene
-    this.sizes = sizes
     this.wrapper = document.querySelector('.company__wrapper')
   }
 

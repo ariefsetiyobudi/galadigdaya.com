@@ -232,6 +232,7 @@ export default class Page {
   // Loop
 
   update () {
+    this.scroll.limit = this.elements.wrapper.clientHeight - window.innerHeight
     this.scroll.target = GSAP.utils.clamp(0, this.scroll.limit, this.scroll.target)
 
     this.scroll.current = GSAP.utils.interpolate(this.scroll.current, this.scroll.target, 0.1)

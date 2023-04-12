@@ -54,11 +54,12 @@
   }
 
   @include media('<phone') {
+    flex-direction: column-reverse;
     padding: 5rem;
     gap: 5rem;
 
     .company__content__media{
-      display: none;
+      padding: 0 5rem;
     }
   }
 
@@ -133,6 +134,9 @@
 
 .company__content__media{
   width: 77.5rem;
+  @include media('<phone') {
+    width: 100vw;
+  }
 }
 
 .company__content__media__image{

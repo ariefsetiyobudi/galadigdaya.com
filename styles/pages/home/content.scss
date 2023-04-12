@@ -279,7 +279,7 @@
     }
   }
   &:nth-child(3){
-    padding: 15rem 5rem 0;
+    padding: 5rem;
     .home__content__wrapper{
       max-width: 62rem;
       z-index: 2;
@@ -409,7 +409,7 @@
     @include media('<phone') {
       position: absolute;
       width: 55vw;
-      top: 15rem;
+      top: 10rem;
       right: 0;
     }
   }
@@ -419,7 +419,7 @@
 
   &:nth-child(5){
     @include media('<phone') {
-      padding-top: 20rem;
+      padding-top: 15rem;
     }
   }
 
@@ -479,7 +479,7 @@
   }
 
   @include media('<phone') {
-    padding: 15rem 5rem 0;
+    padding: 5rem;
     flex-direction: column-reverse;
   }
 }
@@ -532,6 +532,7 @@
 }
 
 .home__content__button{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

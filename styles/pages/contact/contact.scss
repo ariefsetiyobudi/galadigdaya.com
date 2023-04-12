@@ -11,6 +11,10 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 15rem 5rem 0;
+
+  @include media('<phone') {
+    padding: 15rem 5rem 5rem;
+  }
 }
 
 .contact__content__box{

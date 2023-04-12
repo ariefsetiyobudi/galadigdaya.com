@@ -12,7 +12,7 @@
   gap : 5rem;
 
   &:first-of-type{
-    padding: 15rem 5rem 5rem;
+    padding: 10rem 5rem 5rem;
   }
 
   @include media('<phone') {
@@ -73,6 +73,7 @@
 
 
 .services__content__button{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
