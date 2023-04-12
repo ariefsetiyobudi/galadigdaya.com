@@ -6,7 +6,7 @@ import each from 'lodash/each'
 import * as screenOrientationJs from 'screen-orientation-js'
 
 import Canvas from 'components/Canvas'
-// import Detection from 'classes/Detection'
+import Detection from 'classes/Detection'
 
 import Navigation from 'components/Navigation'
 import Preloader from 'components/Preloader'
@@ -30,12 +30,14 @@ class App {
   }
 
   preventLandscape () {
-    screenOrientationJs.init({
-      color: '#141414',
-      bgColor: '#f2f2f2',
-      animation: true,
-      fontSize: 3
-    })
+    if (Detection.isPhone()) {
+      screenOrientationJs.init({
+        color: '#141414',
+        bgColor: '#f2f2f2',
+        animation: true,
+        fontSize: 3
+      })
+    }
   }
 
   createCanvas () {
