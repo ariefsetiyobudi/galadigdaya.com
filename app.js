@@ -153,6 +153,8 @@ app.get('/contact', async (req, res) => {
 })
 
 app.get('/video', async (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*')
   // Ensure there is a range given for the video
   const range = req.headers.range
   if (!range) {
@@ -179,9 +181,7 @@ app.get('/video', async (req, res) => {
     'Content-Range': `bytes ${start}-${end}/${videoSize}`,
     'Accept-Ranges': 'bytes',
     'Content-Length': contentLength,
-    'Content-Type': 'video/mp4',
-    'Access-Control-Allow-Credentials': true,
-    'Access-Control-Allow-Origin': '*'
+    'Content-Type': 'video/mp4'
   }
 
   // HTTP Status 206 for Partial Content
