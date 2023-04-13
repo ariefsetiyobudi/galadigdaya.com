@@ -44,4 +44,11 @@ export default class Services extends Page {
   removeEventListeners () {
     this.elements.scrolltop.removeEventListener('click', this.scrollTopEvent)
   }
+
+  destroy () {
+    super.destroy()
+
+    this.link.removeEventListeners()
+    this.scrolltop.removeEventListeners()
+  }
 }

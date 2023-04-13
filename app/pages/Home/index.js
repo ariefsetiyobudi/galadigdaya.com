@@ -21,10 +21,10 @@ export default class Home extends Page {
   create () {
     super.create()
 
-    this.link = this.elements.link.forEach((item) => {
+    this.elements.link.forEach((item) => {
       const scrolldown = item.classList.contains('scrolldown__button')
       if (!scrolldown) {
-        return new Button({
+        this.link = new Button({
           element: item
         })
       }
@@ -60,5 +60,13 @@ export default class Home extends Page {
   removeEventListeners () {
     this.elements.scrolldown.removeEventListener('click', this.onClickEvent)
     this.elements.scrolltop.removeEventListener('click', this.scrollTopEvent)
+  }
+
+  destroy () {
+    super.destroy()
+
+    this.link.removeEventListeners()
+    this.scrolldown.removeEventListeners()
+    this.scrolltop.removeEventListeners()
   }
 }

@@ -9,8 +9,6 @@ export default class Gallery {
   constructor ({ element, geometry, index, gl, scene, sizes }) {
     this.element = element
     this.elementsWrapper = element.querySelector('.home__gallery__wrapper')
-    this.parentNode = element.parentNode
-
     this.geometry = geometry
     this.index = index
     this.gl = gl
@@ -37,7 +35,7 @@ export default class Gallery {
   }
 
   createMedias () {
-    this.mediasElements = this.element.querySelectorAll('.home__gallery__media') // prettier-ignore
+    this.mediasElements = this.element.querySelectorAll('.home__gallery__media')
 
     this.medias = map(this.mediasElements, (element, index) => {
       return new Media({
@@ -68,7 +66,7 @@ export default class Gallery {
 
     this.sizes = e.sizes
 
-    this.width = (this.bounds.width / window.innerWidth) * this.sizes.width // prettier-ignore };
+    this.width = (this.bounds.width / window.innerWidth) * this.sizes.width
 
     this.scroll.current = this.scroll.target = 0
 
@@ -104,7 +102,7 @@ export default class Gallery {
     this.scroll.target -= this.scroll.velocity
     this.scroll.target += distance
 
-    this.scroll.current = GSAP.utils.interpolate(this.scroll.current, this.scroll.target, this.scroll.lerp) // prettier-ignore
+    this.scroll.current = GSAP.utils.interpolate(this.scroll.current, this.scroll.target, this.scroll.lerp)
 
     map(this.medias, (media, index) => {
       const scaleX = media.mesh.scale.x / 2 + 0.25

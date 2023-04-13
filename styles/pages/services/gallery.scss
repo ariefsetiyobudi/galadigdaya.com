@@ -5,13 +5,16 @@
 }
 
 .services__gallery{
-  height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   position: relative;
   overflow: hidden;
   background-color: $color-cool-black;
+  @include media('<phone'){
+    height: 100vh;
+    font-size: 100vw;
+  }
 }
 .services__gallery__title{
   color: transparent;
