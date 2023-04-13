@@ -9,6 +9,7 @@ export default class Navigation extends Component {
     super({
       element: '.navigation',
       elements: {
+        logo: '.navigation__link',
         items: '.navigation__list__item',
         links: '.navigation__list__link',
         mobileButton: '.navigation__mobile__button',
@@ -43,8 +44,11 @@ export default class Navigation extends Component {
         color: COLOR_WHITE
       })
     } else {
+      GSAP.to(this.elements.logo, {
+        color: COLOR_COOL_BLACK
+      })
       GSAP.to(this.elements.mobileButtonLines, {
-        background: COLOR_BLACK
+        background: COLOR_COOL_BLACK
       })
 
       GSAP.to(this.elements.mobileMenu, {
@@ -59,17 +63,6 @@ export default class Navigation extends Component {
     this.template = template
 
     this.switchEvents()
-
-    // if (this.template === 'home') {
-    //   const home_cbg = document.querySelectorAll('.home__content--background')
-    //   const home_gl = document.querySelectorAll('.home__gallery')
-    //   console.log(home_cbg)
-    //   console.log(home_gl)
-    // }
-    // if (this.template === 'services') {
-    //   const services_gl = document.querySelectorAll('.services__gallery')
-    //   console.log(services_gl)
-    // }
   }
 
   lightMode () {
@@ -77,11 +70,17 @@ export default class Navigation extends Component {
       background: COLOR_COOL_BLACK,
       color: COLOR_WHITE
     })
+
     GSAP.to(document.querySelector('#content'), {
       background: COLOR_CULTURED,
       color: COLOR_BLACK
     })
+
     if (this.template === 'home') {
+      GSAP.to(this.elements.logo, {
+        color: COLOR_WHITE
+      })
+
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_WHITE
       })
@@ -94,8 +93,12 @@ export default class Navigation extends Component {
         color: COLOR_WHITE
       })
     } else {
+      GSAP.to(this.elements.logo, {
+        color: COLOR_COOL_BLACK
+      })
+
       GSAP.to(this.elements.mobileButtonLines, {
-        background: COLOR_BLACK
+        background: COLOR_COOL_BLACK
       })
 
       GSAP.to(this.elements.mobileMenu, {
@@ -113,11 +116,16 @@ export default class Navigation extends Component {
       background: COLOR_BLACK,
       color: COLOR_WHITE
     })
+
     GSAP.to(document.querySelector('#content'), {
       background: COLOR_BLACK,
       color: COLOR_WHITE
     })
+
     if (this.template === 'home') {
+      GSAP.to(this.elements.logo, {
+        color: COLOR_WHITE
+      })
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_WHITE
       })
@@ -130,6 +138,9 @@ export default class Navigation extends Component {
         color: COLOR_WHITE
       })
     } else {
+      GSAP.to(this.elements.logo, {
+        color: COLOR_WHITE
+      })
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_WHITE
       })

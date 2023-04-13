@@ -159,12 +159,12 @@ app.get('/video', async (req, res) => {
     res.status(400).send('Requires Range header')
   }
 
-  // get video stats (about 61MB)
+  // get video stats (about 22MB)
   const videoPath = 'public/pexels-kelly-lacy-6595364.mp4'
   const videoSize = fs.statSync(videoPath).size
 
   // Parse Range
-  // Example: "bytes=32324-"
+  // Example: "bytes=22876269-"
   const CHUNK_SIZE = 10 ** 6 // 1MB
   const start = Number(range.replace(/\D/g, ''))
   const end = Math.min(start + CHUNK_SIZE, videoSize - 1)

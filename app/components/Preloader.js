@@ -37,10 +37,7 @@ export default class Preloader extends Component {
         element: spans,
         expression: ''
       })
-    }
-    )
-
-    // this.elements.titleSpans = this.elements.title.querySelectorAll('span')
+    })
 
     this.length = 0
     this.createLoader()
