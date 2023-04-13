@@ -154,7 +154,8 @@ app.get('/contact', async (req, res) => {
 
 app.get('/video', async (req, res) => {
   const ua = UAParser(req.headers['user-agent'])
-  const vendor = ua.device.vendor
+  const browser = ua.browser.name
+  const model = ua.browser.name
   // Ensure there is a range given for the video
   const range = req.headers.range
   if (!range) {
@@ -165,7 +166,7 @@ app.get('/video', async (req, res) => {
   const videoPath = 'public/pexels-kelly-lacy-6595364.mp4'
   const videoSize = fs.statSync(videoPath).size
 
-  if (vendor === 'Apple') {
+  if (browser === 'Safari' || browser === 'Mobile Safari' || model === 'iPhone') {
     // Parse Range
     // Example: "bytes=32324-"
     const CHUNK_SIZE = range.replace(/bytes=/, '').split('-')
