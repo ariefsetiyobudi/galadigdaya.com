@@ -7,11 +7,11 @@ import each from 'lodash/each'
 import map from 'lodash/map'
 
 // import Section from 'animations/Section'
+import Buttons from 'animations/Buttons'
 import Title from 'animations/Title'
 import Paragraph from 'animations/Paragraph'
 import Label from 'animations/Label'
 import Highlight from 'animations/Highlight'
-import Buttons from 'animations/Buttons'
 
 import AsyncLoad from 'classes/AsyncLoad'
 
@@ -23,11 +23,11 @@ export default class Page {
     this.selectorChildren = {
       preloaders: '[data-src]',
       // animationsSections: '[data-animation="section"]',
+      animationsButtons: '[data-animation="button"]',
       animationsTitles: '[data-animation="title"]',
       aimationsHighlights: '[data-animation="highlight"]',
       animationsParagraphs: '[data-animation="paragraph"]',
       animationsLabels: '[data-animation="label"]',
-      animationsButtons: '[data-animation="button"]',
       ...elements
     }
 
@@ -103,6 +103,16 @@ export default class Page {
 
     // this.animations.push(...this.animationsSections)
 
+    // Buttons
+
+    this.animationsButtons = map(this.elements.animationsButtons, (element) => {
+      return new Buttons({
+        element
+      })
+    })
+
+    this.animations.push(...this.animationsButtons)
+
     // Titles
 
     this.animationsTitles = map(this.elements.animationsTitles, (element) => {
@@ -142,16 +152,6 @@ export default class Page {
     })
 
     this.animations.push(...this.aimationsHighlights)
-
-    // Buttons
-
-    this.animationsButtons = map(this.elements.animationsButtons, (element) => {
-      return new Buttons({
-        element
-      })
-    })
-
-    this.animations.push(...this.animationsButtons)
   }
 
   createObserver () {
