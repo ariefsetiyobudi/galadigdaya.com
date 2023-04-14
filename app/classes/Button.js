@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+/* eslint-disable no-floating-decimal */
 import GSAP from 'gsap'
 import Component from 'classes/Component'
 import { split } from 'utils/text'
@@ -39,18 +40,18 @@ export default class Button extends Component {
       paused: true
     })
     this.timeline.to(this.elements.textSpans, {
-      duration: 0.5,
+      duration: .5,
       ease: 'back.inOut',
-      transform: 'rotate3d(1, 0.1, 0, -90deg)',
-      stagger: 0.01
+      transform: 'rotate3d(1, 0.2, 0, -90deg)',
+      stagger: 0.02
     }, 0)
     this.timeline.fromTo(this.elements.hoverSpans, {
-      transform: 'rotate3d(1, 0.1, 0, 90deg)'
+      transform: 'rotate3d(1, 0.2, 0, 90deg)'
     }, {
-      duration: 0.5,
+      duration: .5,
       ease: 'back.inOut',
       transform: 'rotate3d(0, 0, 0, 90deg)',
-      stagger: 0.01
+      stagger: 0.02
     }, 0.05)
   }
 
