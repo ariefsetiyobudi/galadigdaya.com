@@ -66,6 +66,10 @@
   line-height: 1.5;
   border-bottom: 1px solid $color-black;
   padding-bottom: 3rem;
+
+  a{
+    @extend %link--hidden;
+  }
 }
 
 .contact__content__media{
