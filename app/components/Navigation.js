@@ -56,7 +56,7 @@ export default class Navigation extends Component {
       })
 
       GSAP.to(this.element, {
-        color: COLOR_BLACK
+        color: COLOR_COOL_BLACK
       })
     }
 
@@ -106,7 +106,7 @@ export default class Navigation extends Component {
       })
 
       GSAP.to(this.element, {
-        color: COLOR_BLACK
+        color: COLOR_COOL_BLACK
       })
     }
   }

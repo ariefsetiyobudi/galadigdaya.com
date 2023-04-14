@@ -8,7 +8,7 @@ block content
     .services__wrapper
       each section in services.data.body
         if section.slice_type == 'content'
-          section.services__content(class=`${section.primary.type === 'Left' ? 'services__content--left' : section.primary.type === 'Right' ? 'services__content--right' : 'services__content--background'}`)
+          section.services__content(class=`${section.primary.type === 'Left' ? 'services__content--left' : section.primary.type === 'Right' ? 'services__content--right' : 'services__content--background'}` nav-color=`${section.primary.type === 'Left' ? '#00315c' : section.primary.type === 'Right' ? '#00315c' : '#fff'}`)
             .services__content__wrapper
               if section.primary.label
                 p.services__content__label(data-animation="label")=section.primary.label
@@ -28,20 +28,20 @@ block content
             figure.services__content__media
               img.services__content__media__image(data-animation="highlight" alt=section.primary.image.alt data-src=section.primary.image.url)
         if section.slice_type == 'gallery'
-          section.services__gallery
+          section.services__gallery(data-animation="section" nav-color="#fff")
             h2.services__gallery__title(data-animation="highlight")!=section.primary.title.replace(/\n/g, '<br>')
             .services__gallery__wrapper
               each media in section.items
                 figure.services__gallery__media
                   img.services__gallery__media__image(alt=media.image.alt data-src=media.image.url)
         if section.slice_type == 'lists'
-          section.services__lists
+          section.services__lists(data-animation="section" nav-color="#00315c")
             p.services__lists__label(data-animation="label")=section.primary.label
             each route in section.items
               .services__lists__box
                 h2.services__lists__title(data-animation="title")!=route.item
         if section.slice_type == 'quality'
-          section.services__quality
+          section.services__quality(data-animation="section" nav-color="#00315c")
             .service__quality__box
               p.services__quality__label(data-animation="label")=section.primary.label
               p.services__quality__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')

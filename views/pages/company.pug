@@ -8,7 +8,7 @@ block content
     .company__wrapper
       each section in company.data.body
         if section.slice_type == 'content'
-          section.company__content(class=`${section.primary.type === 'Left' ? 'company__content--left' : section.primary.type === 'Right' ? 'company__content--right' : 'company__content--background'}`)
+          section.company__content(class=`${section.primary.type === 'Left' ? 'company__content--left' : section.primary.type === 'Right' ? 'company__content--right' : 'company__content--background'}` nav-color="00315c")
             .company__content__wrapper
               if section.primary.label
                   p.company__content__label(data-animation="label")!=section.primary.label.replace(/\n/g, '<br>')
@@ -21,14 +21,14 @@ block content
             figure.company__content__media
               img.company__content__media__image(data-animation="highlight"  alt=section.primary.image.alt data-src=section.primary.image.url)
         if section.slice_type == 'gallery'
-          section.company__gallery--2
+          section.company__gallery--2(data-animation="section" nav-color="#00315c")
             h2.company__gallery__title--2(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
             .company__gallery__wrapper--2
               each media in section.items
                 figure.company__gallery__media--2
                   img.company__gallery__media__image--2(data-animation="highlight" alt=media.image.alt data-src=media.image.url)
         if section.slice_type == 'result'
-          section.company__result
+          section.company__result(data-animation="section" nav-color="#00315c")
             .company__result__wrapper
               each text in section.items
                 .company__result__box

@@ -8,7 +8,7 @@ block content
     .home__wrapper
       each section in home.data.body
         if section.slice_type == 'content'
-          section.home__content(class=`${section.primary.type === 'Left' ? 'home__content--left' : section.primary.type === 'Right' ? 'home__content--right' : 'home__content--background'}`)
+          section.home__content(data-animation="section" class=`${section.primary.type === 'Left' ? 'home__content--left' : section.primary.type === 'Right' ? 'home__content--right' : 'home__content--background'}` nav-color=`${section.primary.type === 'Left' ? '#00315c' : section.primary.type === 'Right' ? '#00315c' : '#fff'}`)
             .home__content__wrapper
               if section.primary.text =='Scroll Down'
                 .embed__responsive__item
@@ -40,21 +40,21 @@ block content
               img.home__content__media__image(data-animation="highlight" alt=section.primary.image.alt data-src=section.primary.image.url)
         if section.slice_type == 'gallery'
           if section.primary.title == 'Gala Digdaya &bull; Gala Digdaya &bull; Gala Digdaya &bull; Gala Digdaya'
-            section.home__gallery
+            section.home__gallery(nav-color="#fff")
               h2.home__gallery__title(data-animation="highlight")!=section.primary.title.replace(/\n/g, '<br>')
               .home__gallery__wrapper
                 each media in section.items
                   figure.home__gallery__media
                     img.home__gallery__media__image(alt=media.image.alt data-src=media.image.url)
           else
-            section.home__gallery--2
+            section.home__gallery--2(data-animation="section" nav-color="#00315c")
               h2.home__gallery__title--2(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
               .home__gallery__wrapper--2
                 each media in section.items
                   figure.home__gallery__media--2
                     img.home__gallery__media__image--2(data-animation="highlight" alt=media.image.alt data-src=media.image.url)
         if section.slice_type == 'result'
-          section.home__result
+          section.home__result(data-animation="section" nav-color="#00315c")
             .home__result__wrapper
               each text in section.items
                 .home__result__box
