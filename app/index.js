@@ -203,6 +203,7 @@ class App {
 
   addEventListeners () {
     window.addEventListener('popstate', this.onPopState.bind(this))
+    window.addEventListener('DOMMouseScroll', this.onWheel.bind(this))
     window.addEventListener('mousewheel', this.onWheel.bind(this))
     window.addEventListener('mousewheel', this.onTouchMove.bind(this))
 
