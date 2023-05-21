@@ -11,7 +11,6 @@ export default class Animation extends Component {
 
   createObserver () {
     const section = this.element.localName
-
     if (section === 'section') {
       this.observer = new window.IntersectionObserver((entries) => {
         entries.forEach((entry) => {

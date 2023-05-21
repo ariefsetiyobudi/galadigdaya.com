@@ -36,23 +36,12 @@ export default class Navigation extends Component {
         background: COLOR_WHITE
       })
 
-      GSAP.to(this.elements.mobileMenu, {
-        color: COLOR_WHITE
-      })
-
       GSAP.to(this.element, {
         color: COLOR_WHITE
       })
     } else {
-      GSAP.to(this.elements.logo, {
-        color: COLOR_COOL_BLACK
-      })
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_COOL_BLACK
-      })
-
-      GSAP.to(this.elements.mobileMenu, {
-        color: COLOR_WHITE
       })
 
       GSAP.to(this.element, {
@@ -77,32 +66,16 @@ export default class Navigation extends Component {
     })
 
     if (this.template === 'home') {
-      GSAP.to(this.elements.logo, {
-        color: COLOR_WHITE
-      })
-
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_WHITE
-      })
-
-      GSAP.to(this.elements.mobileMenu, {
-        color: COLOR_WHITE
       })
 
       GSAP.to(this.element, {
         color: COLOR_WHITE
       })
     } else {
-      GSAP.to(this.elements.logo, {
-        color: COLOR_COOL_BLACK
-      })
-
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_COOL_BLACK
-      })
-
-      GSAP.to(this.elements.mobileMenu, {
-        color: COLOR_WHITE
       })
 
       GSAP.to(this.element, {
@@ -123,30 +96,16 @@ export default class Navigation extends Component {
     })
 
     if (this.template === 'home') {
-      GSAP.to(this.elements.logo, {
-        color: COLOR_WHITE
-      })
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_WHITE
-      })
-
-      GSAP.to(this.elements.mobileMenu, {
-        color: COLOR_WHITE
       })
 
       GSAP.to(this.element, {
         color: COLOR_WHITE
       })
     } else {
-      GSAP.to(this.elements.logo, {
-        color: COLOR_WHITE
-      })
       GSAP.to(this.elements.mobileButtonLines, {
         background: COLOR_WHITE
-      })
-
-      GSAP.to(this.elements.mobileMenu, {
-        color: COLOR_BLACK
       })
 
       GSAP.to(this.element, {
