@@ -95,7 +95,10 @@
       width: 30vw;
 
       .footer__content__media{
-        padding: 2rem 5rem;
+        padding: 5rem 0;
+      }
+      .footer__content__media__image{
+        width: 75%;
       }
   }
   &:last-of-type{
