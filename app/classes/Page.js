@@ -6,7 +6,7 @@ import Prefix from 'prefix'
 import each from 'lodash/each'
 import map from 'lodash/map'
 
-// import Section from 'animations/Section'
+import Section from 'animations/Section'
 import Buttons from 'animations/Buttons'
 import Title from 'animations/Title'
 import Paragraph from 'animations/Paragraph'
@@ -22,7 +22,7 @@ export default class Page {
     this.selector = element
     this.selectorChildren = {
       preloaders: '[data-src]',
-      // animationsSections: '[data-animation="section"]',
+      animationsSections: '[data-animation="section"]',
       animationsButtons: '[data-animation="button"]',
       animationsTitles: '[data-animation="title"]',
       aimationsHighlights: '[data-animation="highlight"]',
@@ -95,13 +95,13 @@ export default class Page {
 
     // Section
 
-    // this.animationsSections = map(this.elements.animationsSections, (element) => {
-    //   return new Section({
-    //     element
-    //   })
-    // })
+    this.animationsSections = map(this.elements.animationsSections, (element) => {
+      return new Section({
+        element
+      })
+    })
 
-    // this.animations.push(...this.animationsSections)
+    this.animations.push(...this.animationsSections)
 
     // Buttons
 
