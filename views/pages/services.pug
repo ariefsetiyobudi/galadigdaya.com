@@ -46,6 +46,7 @@ block content
               p.services__quality__label(data-animation="label")=section.primary.label
               p.services__quality__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
             .service__quality__box
+              p.services__quality__label=section.primary.label
               each quality in section.items
                 .service__quality__inner__box
                   p.services__quality__label__right(data-animation="label")
