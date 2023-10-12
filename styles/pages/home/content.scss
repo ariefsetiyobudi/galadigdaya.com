@@ -283,6 +283,10 @@
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00315C",endColorstr="#00315C",GradientType=1);
     }
 
+    @include media('>tablet') {
+      height: 100vh;
+    }
+
     @include media('<phone'){
       height: 100vh;
       justify-content: flex-end;
