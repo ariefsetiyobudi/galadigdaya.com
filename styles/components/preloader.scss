@@ -8,6 +8,7 @@
 }
 .preloader__text {
 	max-width: 40%;
+  visibility: hidden;
 
 	span {
 		@extend %title-53;

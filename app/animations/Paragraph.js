@@ -23,7 +23,7 @@ export default class Paragraph extends Animation {
     }, {
       autoAlpha: 1,
       delay: 0.5,
-      duration: 1.5,
+      duration: 1.75,
       ease: 'back.inOut',
       stagger: {
         axis: 'x',

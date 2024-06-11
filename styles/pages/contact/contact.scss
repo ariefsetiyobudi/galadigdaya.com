@@ -21,7 +21,7 @@
   padding: 15rem 5rem;
 
   @include media('<phone') {
-    padding: 15rem 5rem 5rem;
+    padding: 20rem 5rem 5rem;
   }
 }
 
@@ -49,7 +49,8 @@
 .contact__content__title{
   @extend %title-h2;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .contact__content__description{
@@ -58,13 +59,13 @@
 
 .contact__content__office{
   line-height: 1.5;
-  border-bottom: 1px solid $color-black;
+  border-bottom: 0.4px solid $color-black;
   padding-bottom: 3rem;
 }
 
 .contact__content__contact{
   line-height: 1.5;
-  border-bottom: 1px solid $color-black;
+  border-bottom: 0.4px solid $color-black;
   padding-bottom: 3rem;
 
   a{
@@ -95,7 +96,7 @@
   iframe{
     width: 100%;
     height: 100%;
-    border: 1px solid $color-dark-silver;
+    border: 0.4px solid $color-dark-silver;
   }
 
   @include media('<phone') {

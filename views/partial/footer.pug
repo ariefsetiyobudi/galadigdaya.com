@@ -2,7 +2,7 @@ footer.footer
   a.scrolltop__button(data-animation="button" target="" href="javascript:void(0)")
     span Scroll Top
     svg.scrolltop__link__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 39")
-      path(opacity="0.5" stroke="currentColor" fill="none" d="m 19.5,0 h 163 C 193.303,0 202,8.697 202,19.5 202,30.303 193.303,39 182.5,39 H 19.5 C 8.697,39 0,30.303 0,19.5 0,8.697 8.697,0 19.5,0 Z")
+      path(opacity="0.5" stroke="currentColor" fill="none" d="m 19.5,0.5 h 163 c 10.526,0 19,8.474 19,19 0,10.526 -8.474,19 -19,19 h -163 c -10.526,0 -19,-8.474 -19,-19 0,-10.526 8.474,-19 19,-19 z")
       path.scrolltop__link__icon__path(stroke="#000000" fill="none" d="m 19.5,0.5 h 163 c 10.526,0 19,8.474 19,19 0,10.526 -8.474,19 -19,19 h -163 c -10.526,0 -19,-8.474 -19,-19 0,-10.526 8.474,-19 19,-19 z")
   .footer__wrapper
     .footer__content
@@ -27,11 +27,12 @@ footer.footer
       if section.slice_type == 'download'
         .footer__content
           .footer__content__title=section.slice_type
-          figure.footer__content__media
-            img.footer__content__media__image(data-animation="highlight" alt=section.primary.download.alt data-src=section.primary.download.url)
+          a.contact__content__download(href='/gala_digdaya.pdf' target='_blank')
+            figure.footer__content__media
+              img.footer__content__media__image(data-animation="highlight" alt=section.primary.download.alt data-src=section.primary.download.url)
   .footer__cc
     .footer__copyright!=footer.data.copyright
     .footer__credit
       each credit in footer.data.credit
-        p.footer__credit__text Credit :
+        p.footer__credit__text Website by
         a.footer__credit__link(href=`${credit.link.url}` target=`${credit.link.target}`)=credit.text

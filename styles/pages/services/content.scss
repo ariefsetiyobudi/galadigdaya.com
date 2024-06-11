@@ -13,7 +13,7 @@
 
   @include media('<phone') {
     flex-direction: column-reverse;
-    padding: 15rem 5rem 5rem;
+    padding: 10rem 5rem 5rem;
     width: 100%;
   }
 }
@@ -49,7 +49,7 @@
   }
   @include media('<phone') {
     padding-bottom: 5rem;
-    border-bottom: 1px solid $color-black;
+    border-bottom: 0.4px solid $color-black;
     max-width:100%;
   }
 }

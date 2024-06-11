@@ -1,7 +1,7 @@
 #content[mode='dark']{
   .footer{
     background: $color-black;
-    border-top: 1px solid $color-cultured-opacity
+    border-top: 0.4px solid $color-cultured-opacity
   }
   .scrolltop__button{
     color: $color-white;
@@ -80,6 +80,7 @@
 
   @include media("<phone") {
     flex-direction: row;
+    gap: 2rem;
 
     .footer__content:nth-child(1),
     .footer__content:nth-child(4){
@@ -106,9 +107,14 @@
   }
 
   @include media("<phone") {
-    width: calc((100vw - 10rem) / 3);
-    &:last-of-type{
-      width: 20vw;
+    &:nth-child(2) {
+      width: calc(57vw - 14rem);
+    }
+    &:nth-child(3) {
+      width: 25vw;
+    }
+    &:last-of-type {
+      width: 18vw;
     }
 	}
 }
@@ -181,7 +187,7 @@
   gap: 0.5rem;
 
   .footer__credit__link{
-    @extend %link--hidden;
+    @extend %link;
   }
 }
 
@@ -201,7 +207,7 @@
   }
 
   @include media("<phone") {
-    left: 5rem;
-    bottom: 4rem;
+    right: 4rem;
+    bottom: 7rem;
 	}
 }

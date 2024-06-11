@@ -22,8 +22,9 @@ html {
 
 body {
   @extend %cover;
-  font-family: $font-tomato-grotesk;
   @extend %description-20;
+  font-family: $font-suisse;
+  font-weight: 300;
   position: fixed;
 }
 

@@ -200,7 +200,7 @@
       @include media('<phone') {
         position: absolute;
         bottom: 10rem;
-        right: 0;
+        left: 0;
       }
     }
     .home__content__media{
@@ -290,7 +290,7 @@
     @include media('<phone'){
       height: 100vh;
       justify-content: flex-end;
-      padding: 10rem 4rem;
+      padding: 14rem 4rem;
     }
   }
   &:nth-child(3){
@@ -298,6 +298,10 @@
     .home__content__wrapper{
       max-width: 62rem;
       z-index: 2;
+
+      @include media('<phone'){
+        max-width: 100%;
+      }
     }
     .home__content__title{
       padding: 0;
@@ -305,7 +309,7 @@
 
       @include media('<phone'){
         padding: 0 0 5rem;
-        border-bottom: 1px solid $color-black;
+        border-bottom: 0.4px solid $color-white;
       }
     }
     .home__content__inner__box{
@@ -319,13 +323,8 @@
         margin-top: 2.5rem;
       }
       span ul li{
-        border-bottom: 1px solid $color-white;
+        border-bottom: 0.4px solid $color-white;
         padding: 1rem 0;
-
-        @include media('<phone'){
-          border-bottom: 1px solid $color-black;
-          padding: 1rem 0;
-        }
       }
     }
     .home__content__button{
@@ -345,12 +344,14 @@
       z-index: -1;
 
       @include media('<phone'){
-        display: none;
+        height: 100%;
       }
     }
     .home__content__media__image{
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      filter: contrast(0.2);
     }
 
     &::before,
@@ -387,14 +388,12 @@
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00315C",endColorstr="#00315C",GradientType=1);
 
       @include media('<phone'){
-        display: none;
+        height: 100%;
       }
     }
 
     @include media('<phone'){
-      padding: 5rem;
-      color: $color-black;
-      height:auto;
+      padding: 20rem 5rem;
     }
   }
 }
@@ -425,7 +424,7 @@
     @include media('<phone') {
       position: absolute;
       width: 55vw;
-      top: 10rem;
+      top: 15rem;
       right: 0;
     }
   }
@@ -435,7 +434,7 @@
 
   &:nth-child(5){
     @include media('<phone') {
-      padding-top: 15rem;
+      padding-top: 20rem;
     }
   }
 
@@ -462,10 +461,6 @@
   &:nth-child(6){
     .home__content__wrapper{
       padding-top: 8rem;
-
-      @include media('<phone') {
-        padding: 0;
-      }
     }
     .home__content__label{
       position: absolute;
@@ -494,12 +489,11 @@
     }
 
     @include media('<phone') {
-      padding-bottom: 10rem;
+      padding: 5rem 5rem 10rem;
     }
   }
 
   @include media('<phone') {
-    padding: 5rem;
     flex-direction: column-reverse;
   }
 }
@@ -511,7 +505,7 @@
   flex-direction: column;
   padding: 0 0 5rem;
   max-width: 55vw;
-  border-bottom: 1px solid $color-black;
+  border-bottom: 0.4px solid $color-black;
 
   @include media('<phone'){
     max-width: 100%;

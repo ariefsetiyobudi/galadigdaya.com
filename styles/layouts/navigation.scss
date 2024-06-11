@@ -33,8 +33,8 @@
   }
 
   @include media('<phone') {
-    width: 30rem;
-    top: 5rem;
+    width: 25rem;
+    top: 5.2rem;
   }
 }
 .navigation__link__icon {
@@ -143,7 +143,7 @@
 }
 .navigation__mobile__list__item{
   @include media('<phone'){
-    border-bottom: 1px solid;
+    border-bottom: 0.4px solid $color-white;
     padding: 1rem 0;
     color: $color-white;
   }
@@ -168,13 +168,13 @@
 
 .navigation__mobile__content__office{
   line-height: 1.5;
-  border-bottom: 1px solid $color-white;
+  border-bottom: 0.4px solid $color-white;
   padding-bottom: 2.5rem;
 }
 
 .navigation__mobile__content__contact{
   line-height: 1.5;
-  border-bottom: 1px solid $color-white;
+  border-bottom: 0.4px solid $color-white;
   padding-bottom: 2.5rem;
 }
 
